@@ -478,7 +478,7 @@
         </div>
     </section>
 
-    <!-- SECTION PENDAFTARAN & DASHBOARD ADM (BARU) -->
+    <!-- SECTION PENDAFTARAN & DASHBOARD ADM (FOONTE API INTEGRATION) -->
     <section id="pendaftaran" class="py-20 bg-red-50/50 px-6">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-12">
@@ -488,14 +488,13 @@
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <!-- FORMULIR PENDAFTARAN (DENGAN INTEGRASI FORMSPREE) -->
+                <!-- FORMULIR PENDAFTARAN (DENGAN INTEGRASI FOONTE API) -->
                 <div class="bg-white p-6 md:p-8 rounded-3xl border border-red-100/80 shadow-md hover:shadow-xl transition duration-300">
                     <h3 class="font-bold text-lg text-gray-900 mb-4 flex items-center gap-2">
                         <i class="fa-solid fa-user-plus text-red-600"></i> Form Pendaftaran
                     </h3>
                     
-                    <!-- Formspree Action Added -->
-                    <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" id="formPendaftaran" class="space-y-4">
+                    <form id="formPendaftaran" class="space-y-4">
                         <div>
                             <label class="block text-xs font-semibold text-gray-600 mb-1">Nama Lengkap</label>
                             <input type="text" name="nama" id="nama" required placeholder="Masukkan nama" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-xs focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-600 transition">
@@ -517,7 +516,7 @@
                                 <option value="Perlengkapan & Logistik">Perlengkapan & Logistik</option>
                             </select>
                         </div>
-                        <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold text-xs py-3 rounded-xl shadow-md shadow-red-600/20 hover:shadow-red-600/40 hover:-translate-y-0.5 transition duration-300 flex items-center justify-center gap-2">
+                        <button type="submit" id="btnSubmit" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold text-xs py-3 rounded-xl shadow-md shadow-red-600/20 hover:shadow-red-600/40 hover:-translate-y-0.5 transition duration-300 flex items-center justify-center gap-2">
                             <i class="fa-solid fa-paper-plane"></i> Kirim Pendaftaran
                         </button>
                     </form>
@@ -639,36 +638,80 @@
         </div>
     </footer>
 
-    <!-- SCRIPT INTERAKTIF DASHBOARD & FORMSPREE HANLDER -->
+    <!-- SCRIPT INTERAKTIF DASHBOARD & FOONTE API HANDLER -->
     <script>
-        let totalCount = 2;
+        let totalCount = 0;
         const form = document.getElementById('formPendaftaran');
         const tabel = document.getElementById('tabelPendaftar');
         const totalText = document.getElementById('totalPendaftar');
 
+        // Ganti dengan Token Foonte milik Anda
+        const FOONTE_TOKEN = 'RWDm6REhoEq36iiS1Ef2'; 
+
         form.addEventListener('submit', function(e) {
-            // Mempertahankan fungsionalitas penambahan ke tabel di tampilan (UI)
+            e.preventDefault();
+
             const nama = document.getElementById('nama').value;
             const rtRw = document.getElementById('rtRw').value;
             const telepon = document.getElementById('telepon').value;
             const divisi = document.getElementById('divisi').value;
+            const btnSubmit = document.getElementById('btnSubmit');
 
-            const tr = document.createElement('tr');
-            tr.className = "hover:bg-gray-50/50 transition duration-150";
-            tr.innerHTML = `
-                <td class="p-3 font-semibold">${nama}</td>
-                <td class="p-3">${rtRw}</td>
-                <td class="p-3">${telepon}</td>
-                <td class="p-3"><span class="bg-gray-100 px-2 py-1 rounded text-[10px]">${divisi}</span></td>
-                <td class="p-3"><span class="bg-yellow-100 text-yellow-700 font-bold px-2 py-0.5 rounded text-[10px]">Pending</span></td>
-            `;
+            // Ubah button status loading
+            btnSubmit.disabled = true;
+            btnSubmit.innerHTML = `<i class="fa-solid fa-spinner animate-spin"></i> Mengirim...`;
 
-            tabel.appendChild(tr);
-            totalCount++;
-            totalText.textContent = totalCount;
-            
-            // Catatan: Jika ingin mengirim form via Formspree dan mengarahkan halaman tanpa JavaScript me-prevent-nya, 
-            // biarkan form ter-submit secara native.
+            // Template pesan WhatsApp yang akan dikirim via Foonte
+            const pesan = `Halo ${nama},\n\nTerima kasih telah mendaftar anggota Karang Taruna RW 005!\n\n*Detail Pendaftaran:*\n- Nama: ${nama}\n- RT/RW: ${rtRw}\n- Divisi Minat: ${divisi}\n\nStatus pendaftaran Anda saat ini sedang diproses. Silakan tunggu informasi selanjutnya dari pengurus.`;
+
+            // Konfigurasi FormData untuk API Foonte
+            const formData = new FormData();
+            formData.append('target', telepon);
+            formData.append('message', pesan);
+
+            // Mengirim request ke API Foonte
+            fetch('https://api.foonte.com/send', {
+                method: 'POST',
+                headers: {
+                    'Authorization': FOONTE_TOKEN
+                },
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if(data.status) {
+                    alert('Pendaftaran berhasil dan pesan konfirmasi WhatsApp telah dikirim!');
+                } else {
+                    alert('Pendaftaran berhasil ditambahkan ke tabel, namun pesan WA gagal dikirim: ' + data.reason);
+                }
+            })
+            .catch(error => {
+                console.error('Error sending message via Foonte:', error);
+                alert('Terjadi kesalahan jaringan saat menghubungkan ke server Foonte.');
+            })
+            .finally(() => {
+                // Tambahkan data ke tabel dashboard UI
+                const tr = document.createElement('tr');
+                tr.className = "hover:bg-gray-50/50 transition duration-150";
+                tr.innerHTML = `
+                    <td class="p-3 font-semibold">${nama}</td>
+                    <td class="p-3">${rtRw}</td>
+                    <td class="p-3">${telepon}</td>
+                    <td class="p-3"><span class="bg-gray-100 px-2 py-1 rounded text-[10px]">${divisi}</span></td>
+                    <td class="p-3"><span class="bg-yellow-100 text-yellow-700 font-bold px-2 py-0.5 rounded text-[10px]">Pending</span></td>
+                `;
+
+                tabel.appendChild(tr);
+                totalCount++;
+                totalText.textContent = totalCount;
+
+                // Reset Form
+                form.reset();
+
+                // Kembalikan status tombol
+                btnSubmit.disabled = false;
+                btnSubmit.innerHTML = `<i class="fa-solid fa-paper-plane"></i> Kirim Pendaftaran`;
+            });
         });
     </script>
 </body>
