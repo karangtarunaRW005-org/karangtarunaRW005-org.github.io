@@ -722,10 +722,13 @@
             totalText.textContent = totalCount;
 
             // 2. Format Pesan WhatsApp
-            const pesanPendaftaran = `Halo Admin Karang Taruna RW 005,%0A%0ASaya ingin mendaftar sebagai anggota baru:%0A- *Nama:* ${encodeURIComponent(nama)}%0A- *RT/RW:* ${encodeURIComponent(rtRw)}%0A- *No. WA:* ${encodeURIComponent(telepon)}%0A- *Divisi Minat:* ${encodeURIComponent(divisi)}%0A%0AMohon diproses pendaftaran saya. Terima kasih!`;
+            const pesanPendaftaran = `Halo Admin Karang Taruna RW 005, saya ingin mendaftar...`;
 
             // 3. Buka WhatsApp secara otomatis
-            const waUrl = `https://wa.me/qr/RHT5VH2ECM2JD1?text=${pesanPendaftaran}`;
+            // Gunakan format: https://wa.me/NOMOR_HP?text=PESAN
+            const nomorAdmin = "62895342874610"; // Ganti dengan nomor WhatsApp admin (pakai format 62, jangan 08)
+            const waUrl = `https://wa.me/qr/RHT5VH2ECM2JD1?text=${encodeURIComponent(pesanPendaftaran)}`;
+
             window.open(waUrl, '_blank');
 
             // 4. Reset Form
