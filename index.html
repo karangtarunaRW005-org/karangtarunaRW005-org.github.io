@@ -8,18 +8,56 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts (Plus Jakarta Sans) -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts (Plus Jakarta Sans & Cinema Gothic Fonts) -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
     
     <style>
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
+        }
+        .font-cinema {
+            font-family: 'Cinzel', serif;
         }
         .img-hover-zoom {
             transition: transform 0.5s ease;
         }
         .img-hover-zoom:hover {
             transform: scale(1.05);
+        }
+
+        /* Styling Khusus Teater / Bioskop */
+        .theatre-curtain-left {
+            background: linear-gradient(90deg, #400303 0%, #800a0a 40%, #b30f0f 70%, #590505 100%);
+            box-shadow: inset -10px 0 20px rgba(0,0,0,0.8), 5px 0 15px rgba(0,0,0,0.5);
+        }
+        .theatre-curtain-right {
+            background: linear-gradient(-90deg, #400303 0%, #800a0a 40%, #b30f0f 70%, #590505 100%);
+            box-shadow: inset 10px 0 20px rgba(0,0,0,0.8), -5px 0 15px rgba(0,0,0,0.5);
+        }
+        .theatre-valance {
+            background: linear-gradient(180deg, #400303 0%, #800a0a 60%, #b30f0f 85%, #590505 100%);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+        }
+        .spotlight-beam {
+            background: radial-gradient(ellipse at top, rgba(255, 230, 150, 0.25) 0%, rgba(255, 230, 150, 0.05) 50%, rgba(0, 0, 0, 0) 80%);
+            pointer-events: none;
+        }
+        .cinema-screen-shadow {
+            box-shadow: 0 0 50px rgba(239, 68, 68, 0.25), 0 20px 40px rgba(0,0,0,0.9);
+        }
+        .marquee-bulb {
+            box-shadow: 0 0 8px #fef08a, 0 0 12px #eab308;
+            animation: bulbPulse 2s infinite alternate;
+        }
+        @keyframes bulbPulse {
+            0% { opacity: 0.6; transform: scale(0.95); }
+            100% { opacity: 1; transform: scale(1.05); }
+        }
+        .cinema-overlay-dim {
+            transition: background-color 0.5s ease;
+        }
+        .cinema-dimmed {
+            background-color: rgba(5, 5, 10, 0.95) !important;
         }
     </style>
 </head>
@@ -38,6 +76,7 @@
                 <a href="#beranda" class="text-red-600 font-semibold border-b-2 border-red-600 pb-1">Beranda</a>
                 <a href="#tentang" class="hover:text-red-600 transition">Tentang</a>
                 <a href="#tim" class="hover:text-red-600 transition">Tim</a>
+                <a href="#teater" class="hover:text-red-600 transition flex items-center gap-1"><i class="fa-solid fa-film text-xs text-red-600"></i> Teater</a>
                 <a href="#galeri" class="hover:text-red-600 transition">Galeri</a>
                 <a href="#berita" class="hover:text-red-600 transition">Berita</a>
             </div>
@@ -138,38 +177,53 @@
     </section>
 
     <!-- VISI & MISI SECTION -->
-    <section id="visi" class="py-16 bg-gray-50/70 px-6">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-10">
-                <span class="text-xs font-bold tracking-widest text-red-600 uppercase bg-red-100 px-3 py-1 rounded-full">TENTANG KAMI</span>
-                <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 mt-3">Visi & Misi</h2>
-                <p class="text-gray-500 text-xs md:text-sm mt-1">Landasan dasar keberadaan dan arah perjuangan Karang Taruna RW 005 Lenteng Agung.</p>
-            </div>
+   <section id="visi-misi" class="py-16 px-6 bg-gray-50/70">
+  <div class="max-w-5xl mx-auto">
+    <!-- Header Section -->
+    <div class="text-center mb-10">
+      <span class="text-xs font-bold tracking-widest text-red-600 uppercase bg-red-100 px-3 py-1 rounded-full">About Us</span>
+      <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 mt-3">Visi & Misi</h2>
+    </div>
 
-            <div class="bg-white p-8 md:p-10 rounded-2xl border border-gray-100 shadow-sm space-y-4">
-                <div class="flex items-start gap-4">
-                    <span class="w-7 h-7 bg-red-600 text-white rounded-lg flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">1</span>
-                    <p class="text-gray-700 text-xs md:text-sm font-medium leading-relaxed">Mengembangkan potensi generasi muda di bidang sosial, pendidikan, dan kewirausahaan.</p>
-                </div>
-                <div class="flex items-start gap-4">
-                    <span class="w-7 h-7 bg-red-600 text-white rounded-lg flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">2</span>
-                    <p class="text-gray-700 text-xs md:text-sm font-medium leading-relaxed">Meningkatkan kepedulian terhadap lingkungan dan kebersihan desa.</p>
-                </div>
-                <div class="flex items-start gap-4">
-                    <span class="w-7 h-7 bg-red-600 text-white rounded-lg flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">3</span>
-                    <p class="text-gray-700 text-xs md:text-sm font-medium leading-relaxed">Melestarikan budaya dan kesenian lokal kearifan daerah.</p>
-                </div>
-                <div class="flex items-start gap-4">
-                    <span class="w-7 h-7 bg-red-600 text-white rounded-lg flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">4</span>
-                    <p class="text-gray-700 text-xs md:text-sm font-medium leading-relaxed">Membangun semangat gotong royong dan kebersamaan.</p>
-                </div>
-                <div class="flex items-start gap-4">
-                    <span class="w-7 h-7 bg-red-600 text-white rounded-lg flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">5</span>
-                    <p class="text-gray-700 text-xs md:text-sm font-medium leading-relaxed">Mendorong partisipasi aktif pemuda dalam pembangunan desa.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Container Grid 2 Kolom -->
+    <div class="grid md:grid-cols-2 gap-6">
+      
+      <!-- Box Visi -->
+      <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-center">
+        <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center gap-2">
+          <span class="w-2 h-6 bg-red-600 rounded-full"></span>
+          Visi
+        </h3>
+        <p class="text-gray-600 text-sm md:text-base leading-relaxed">
+          Mewujudkan generasi muda yang kreatif, mandiri, peduli lingkungan, serta aktif dalam membangun kebersamaan dan kemajuan masyarakat.
+        </p>
+      </div>
+
+      <!-- Box Misi -->
+      <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm">
+        <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+          <span class="w-2 h-6 bg-red-600 rounded-full"></span>
+          Misi
+        </h3>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <span class="w-6 h-6 bg-red-600 text-white text-xs rounded-lg flex items-center justify-center shrink-0 font-bold">1</span>
+            <p class="text-gray-700 text-xs md:text-sm leading-relaxed">Membangun semangat gotong royong dan kebersamaan.</p>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-6 h-6 bg-red-600 text-white text-xs rounded-lg flex items-center justify-center shrink-0 font-bold">2</span>
+            <p class="text-gray-700 text-xs md:text-sm leading-relaxed">Mendorong partisipasi aktif pemuda dalam pembangunan lingkungan.</p>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-6 h-6 bg-red-600 text-white text-xs rounded-lg flex items-center justify-center shrink-0 font-bold">3</span>
+            <p class="text-gray-700 text-xs md:text-sm leading-relaxed">Meningkatkan kepedulian terhadap lingkungan dan kebersihan masyarakat.</p>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
 
     <!-- TIM KAMI SECTION (SESUAI VIDEO) -->
     <section id="tim" class="py-16 px-6">
@@ -357,6 +411,20 @@
                     <h4 class="font-bold text-gray-900 text-xs md:text-sm group-hover:text-red-600 transition">Lukman</h4>
                 </div>
 
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-3 group">
+                    <div class="aspect-square rounded-xl bg-gray-100 mb-3 overflow-hidden">
+                        <img src="Mega.F.jpeg" alt="Lukman" class="w-full h-full object-cover img-hover-zoom">
+                    </div>
+                    <h4 class="font-bold text-gray-900 text-xs md:text-sm group-hover:text-red-600 transition">Mega F</h4>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-3 group">
+                    <div class="aspect-square rounded-xl bg-gray-100 mb-3 overflow-hidden">
+                        <img src="mohamad farhan.jpeg" alt="Lukman" class="w-full h-full object-cover img-hover-zoom">
+                    </div>
+                    <h4 class="font-bold text-gray-900 text-xs md:text-sm group-hover:text-red-600 transition">Mohamad Farhan</h4>
+                </div>
+
                 <!-- ANGGOTA 23 -->
                 <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-3 group">
                     <div class="aspect-square rounded-xl bg-gray-100 mb-3 overflow-hidden">
@@ -365,6 +433,145 @@
                     <h4 class="font-bold text-gray-900 text-xs md:text-sm group-hover:text-red-600 transition">Hildan Luth Nurdhonis</h4>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- SECTION TEATER MINI & DOKUMENTASI VIDEO (NEW SECTION) -->
+    <section id="teater" class="py-16 px-4 md:px-8 bg-slate-950 text-white relative overflow-hidden transition-all duration-500 cinema-overlay-dim">
+        
+        <!-- Background Lighting & Atmosphere -->
+        <div class="absolute inset-0 spotlight-beam opacity-80"></div>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-48 bg-amber-500/10 blur-3xl pointer-events-none rounded-full"></div>
+
+        <div class="max-w-5xl mx-auto relative z-10">
+            
+            <!-- Header Teater -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4 border-b border-amber-500/20 pb-6">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold tracking-widest uppercase mb-2">
+                        <i class="fa-solid fa-clapperboard"></i> BIOSKOP & TEATER MINI
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-black text-amber-100 font-cinema tracking-wide flex items-center gap-3">
+                        LAYAR TANCAP RW 005
+                    </h2>
+                    <p class="text-slate-400 text-xs md:text-sm mt-1">Saksikan rekaman momen berharga, pentas seni, dan dokumentasi kebersamaan warga.</p>
+                </div>
+                
+                <!-- Dimmer Switch Button -->
+                <button id="toggleCinemaLight" class="self-start md:self-auto px-4 py-2 bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/40 text-amber-300 text-xs font-semibold rounded-full transition flex items-center gap-2 shadow-lg hover:shadow-amber-500/10">
+                    <i class="fa-solid fa-lightbulb text-amber-400"></i> Mode Bioskop
+                </button>
+            </div>
+
+            <!-- FRAME STAGE TEATER UTAMA -->
+            <div class="relative bg-neutral-900 rounded-3xl p-3 md:p-6 border-2 border-amber-600/40 cinema-screen-shadow overflow-hidden">
+                
+                <!-- Marquee Board Header Top -->
+                <div class="theatre-valance rounded-t-xl py-3 px-4 border-b-2 border-amber-500/50 flex justify-between items-center relative z-20">
+                    <!-- Marquee Lights Left -->
+                    <div class="flex space-x-2">
+                        <span class="w-2.5 h-2.5 bg-amber-300 rounded-full marquee-bulb"></span>
+                        <span class="w-2.5 h-2.5 bg-amber-300 rounded-full marquee-bulb"></span>
+                        <span class="w-2.5 h-2.5 bg-amber-300 rounded-full marquee-bulb"></span>
+                    </div>
+
+                    <div class="text-center">
+                        <span class="text-amber-200 font-cinema text-xs md:text-sm font-bold uppercase tracking-widest block drop-shadow">NOW SHOWING</span>
+                        <h3 class="text-white font-extrabold text-sm md:text-lg tracking-wider text-amber-400">DOKUMENTASI AFTER MOVIE RW 005</h3>
+                    </div>
+
+                    <!-- Marquee Lights Right -->
+                    <div class="flex space-x-2">
+                        <span class="w-2.5 h-2.5 bg-amber-300 rounded-full marquee-bulb"></span>
+                        <span class="w-2.5 h-2.5 bg-amber-300 rounded-full marquee-bulb"></span>
+                        <span class="w-2.5 h-2.5 bg-amber-300 rounded-full marquee-bulb"></span>
+                    </div>
+                </div>
+
+                <!-- CONTAINER LAYAR & TIRAI TEATER -->
+                <div class="relative flex items-center justify-center bg-black rounded-b-xl overflow-hidden aspect-video border border-neutral-800">
+                    
+                    <!-- Tirai Teater Kiri -->
+                    <div class="absolute top-0 bottom-0 left-0 w-8 md:w-16 theatre-curtain-left z-20 pointer-events-none flex flex-col justify-between py-4 items-end">
+                        <div class="w-1 md:w-2 h-full bg-black/30"></div>
+                    </div>
+
+                    <!-- Layar Pemutar Video HTML5 -->
+                    <div class="w-full h-full relative z-10 flex items-center justify-center bg-neutral-950">
+                        <video id="theaterVideo" class="w-full h-full object-cover" controls poster="malem puncak 3.jpeg">
+                            <source src="after movie malam puncak 2026.mp4" type="video/mp4">
+                            Browser Anda tidak mendukung pemutaran video HTML5.
+                        </video>
+                    </div>
+
+                    <!-- Tirai Teater Kanan -->
+                    <div class="absolute top-0 bottom-0 right-0 w-8 md:w-16 theatre-curtain-right z-20 pointer-events-none flex flex-col justify-between py-4 items-start">
+                        <div class="w-1 md:w-2 h-full bg-black/30"></div>
+                    </div>
+
+                </div>
+
+                <!-- FOOTER STAGE & KONTROL / DEKORASI PROYEKTOR -->
+                <div class="mt-4 pt-3 border-t border-neutral-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-400">
+                    <div class="flex items-center gap-3">
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-red-900/60 text-red-300 font-mono text-[11px] border border-red-700/50">
+                            <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span> CINEMA HD
+                        </span>
+                        <span><i class="fa-solid fa-video text-amber-500 mr-1"></i> Proyektor Karang Taruna RW 005</span>
+                    </div>
+
+                    <!-- TIKET BIOSKOP DEKORATIF -->
+                    <div class="bg-gradient-to-r from-amber-600 to-amber-700 text-slate-950 font-mono font-bold px-4 py-1.5 rounded-lg shadow flex items-center gap-3 border border-amber-400/50">
+                        <i class="fa-solid fa-ticket text-sm"></i>
+                        <span class="tracking-widest">TICKET: KARTAR-005</span>
+                        <span class="text-[10px] bg-slate-950 text-amber-400 px-1.5 py-0.5 rounded">VIP</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- DEKORASI PLAYLIST TEATER / PILIHAN VIDEO LAIN -->
+            <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div class="bg-neutral-900/80 rounded-xl p-3 border border-neutral-800 hover:border-amber-500/50 transition flex items-center gap-3 group cursor-pointer">
+                    <div class="w-16 h-12 bg-neutral-800 rounded-lg overflow-hidden shrink-0 relative">
+                        <img src="" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                            <i class="fa-solid fa-play text-xs text-amber-400"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-xs text-slate-200 group-hover:text-amber-400 transition line-clamp-1"></h4>
+                        <p class="text-[10px] text-neutral-500"></p>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-900/80 rounded-xl p-3 border border-neutral-800 hover:border-amber-500/50 transition flex items-center gap-3 group cursor-pointer">
+                    <div class="w-16 h-12 bg-neutral-800 rounded-lg overflow-hidden shrink-0 relative">
+                        <img src="" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                            <i class="fa-solid fa-play text-xs text-amber-400"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-xs text-slate-200 group-hover:text-amber-400 transition line-clamp-1"></h4>
+                        <p class="text-[10px] text-neutral-500"></p>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-900/80 rounded-xl p-3 border border-neutral-800 hover:border-amber-500/50 transition flex items-center gap-3 group cursor-pointer">
+                    <div class="w-16 h-12 bg-neutral-800 rounded-lg overflow-hidden shrink-0 relative">
+                        <img src="" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                            <i class="fa-solid fa-play text-xs text-amber-400"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-xs text-slate-200 group-hover:text-amber-400 transition line-clamp-1"></h4>
+                        <p class="text-[10px] text-neutral-500"></p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -572,7 +779,8 @@
                 <h4 class="font-bold text-gray-900 text-xs uppercase tracking-wider mb-3">NAVIGASI</h4>
                 <ul class="space-y-2 text-xs text-gray-500 font-medium">
                     <li><a href="#tentang" class="hover:text-red-600 transition">Tentang Kami</a></li>
-                    <li><a href="#visi" class="hover:text-red-600 transition">Visi & Misi</a></li>
+                    <li><a href="#visi-misi" class="hover:text-red-600 transition">Visi & Misi</a></li>
+                    <li><a href="#teater" class="hover:text-red-600 transition">Teater Video</a></li>
                     <li><a href="#galeri" class="hover:text-red-600 transition">Galeri</a></li>
                     <li><a href="#berita" class="hover:text-red-600 transition">Berita</a></li>
                     <li><a href="#pendaftaran" class="hover:text-red-600 transition">Pendaftaran</a></li>
@@ -603,7 +811,7 @@
         </div>
     </footer>
 
-    <!-- SCRIPT INTERAKTIF DASHBOARD & WHATSAPP DIRECT -->
+    <!-- SCRIPT INTERAKTIF DASHBOARD, WHATSAPP DIRECT, & CINEMA DIMMER -->
     <script>
         let totalCount = 0;
         const form = document.getElementById('formPendaftaran');
@@ -646,6 +854,22 @@
             // 4. Reset Form
             form.reset();
             alert('Pendaftaran berhasil disimpan! WhatsApp akan terbuka untuk konfirmasi ke admin.');
+        });
+
+        // Script Interaktif Toggle Lampu Bioskop (Cinema Light Dimmer)
+        const btnToggleLight = document.getElementById('toggleCinemaLight');
+        const teaterSection = document.getElementById('teater');
+        let isDimmed = false;
+
+        btnToggleLight.addEventListener('click', function() {
+            isDimmed = !isDimmed;
+            if (isDimmed) {
+                teaterSection.classList.add('cinema-dimmed');
+                btnToggleLight.innerHTML = `<i class="fa-solid fa-lightbulb text-yellow-300"></i> Terangkan Lampu`;
+            } else {
+                teaterSection.classList.remove('cinema-dimmed');
+                btnToggleLight.innerHTML = `<i class="fa-solid fa-lightbulb text-amber-400"></i> Mode Bioskop`;
+            }
         });
     </script>
 </body>
