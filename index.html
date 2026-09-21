@@ -86,40 +86,78 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION (TEMA HUT RI SESUAI VIDEO) -->
-    <section id="beranda" class="relative bg-red-600 text-white pt-6 sm:pt-10 pb-16 sm:pb-20 overflow-hidden">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-12 gap-3 sm:gap-8 items-center relative z-10">
-            <!-- Kolom Teks (Kiri - Span 7 di semua ukuran layar) -->
+    <!-- HERO SECTION (MODERN 3D GLASSMORPHISM DESIGN) -->
+    <section id="beranda" class="relative bg-slate-950 text-white pt-8 sm:pt-14 pb-20 sm:pb-28 overflow-hidden">
+        <!-- 3D Ambient Light Background Blobs -->
+        <div class="absolute top-1/4 -left-20 w-72 h-72 sm:w-96 sm:h-96 bg-red-600/30 rounded-full blur-[100px] pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-80 h-80 sm:w-[500px] sm:h-[500px] bg-red-800/20 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute top-10 right-1/3 w-64 h-64 bg-amber-500/15 rounded-full blur-[90px] pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-12 gap-4 sm:gap-8 items-center relative z-10">
+            <!-- Kolom Teks (Kiri - Span 7) -->
             <div class="col-span-7">
-                <span class="inline-flex items-center gap-1.5 sm:gap-2 px-2 py-0.5 sm:px-3 sm:py-1 rounded-full bg-white/10 text-[9px] sm:text-[11px] font-semibold tracking-wide uppercase mb-2 sm:mb-4 text-white">
-                    <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-yellow-400"></span>
-                    SELAMAT DATANG DI WEBSITE KARANG TARUNA
-                </span>
-                <h1 class="text-xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-2 sm:mb-4 tracking-tight">
-                    Karang Taruna <br> <span class="text-white">RW 005</span>
+                <!-- 3D Badge Status -->
+                <div class="inline-flex items-center gap-2 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[9px] sm:text-xs font-semibold uppercase mb-3 sm:mb-6 shadow-[0_4px_15px_rgba(239,68,68,0.2)]">
+                    <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                    <span class="bg-gradient-to-r from-white to-red-200 bg-clip-text text-transparent">SELAMAT DATANG DI WEBSITE KARANG TARUNA</span>
+                </div>
+
+                <h1 class="text-2xl sm:text-5xl md:text-6xl font-black leading-[1.1] mb-3 sm:mb-6 tracking-tight">
+                    Karang Taruna <br>
+                    <span class="bg-gradient-to-r from-red-500 via-red-400 to-amber-300 bg-clip-text text-transparent drop-shadow-[0_10px_20px_rgba(239,68,68,0.3)]">
+                        RW 005
+                    </span>
                 </h1>
-                <p class="text-red-100 text-[11px] sm:text-sm md:text-base mb-4 sm:mb-8 max-w-lg leading-relaxed">
+
+                <p class="text-slate-300 text-[11px] sm:text-sm md:text-base mb-5 sm:mb-8 max-w-lg leading-relaxed font-normal">
                     Kami percaya setiap pemuda memiliki potensi. Bersama, kita menciptakan kegiatan yang bermanfaat, penuh semangat, dan membawa kebahagiaan untuk desa.
                 </p>
-                <div class="flex flex-wrap items-center gap-2 sm:gap-4">
-                    <a href="#pendaftaran" class="bg-white text-red-600 hover:bg-red-50 font-bold px-3 py-1.5 sm:px-6 sm:py-3 rounded-full text-[10px] sm:text-xs md:text-sm shadow-md transition duration-300 flex items-center gap-1 sm:gap-2">
-                        GABUNG SEKARANG <i class="fa-solid fa-arrow-right text-[10px] sm:text-xs"></i>
+
+                <div class="flex flex-wrap items-center gap-2.5 sm:gap-4">
+                    <!-- 3D Raised Button Primary -->
+                    <a href="#pendaftaran" class="relative group inline-flex items-center gap-2 px-4 py-2 sm:px-7 sm:py-3.5 rounded-2xl bg-gradient-to-r from-red-600 to-red-700 text-white text-[10px] sm:text-xs md:text-sm font-bold shadow-[0_10px_25px_rgba(220,38,38,0.4)] border-t border-red-400/50 hover:shadow-[0_15px_30px_rgba(220,38,38,0.6)] hover:-translate-y-1 active:translate-y-0 transition-all duration-300">
+                        <span>GABUNG SEKARANG</span>
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
                     </a>
-                    <a href="#tentang" class="border border-white hover:bg-white/10 text-white font-semibold px-3 py-1.5 sm:px-6 sm:py-3 rounded-full text-[10px] sm:text-xs md:text-sm transition duration-300">
+
+                    <!-- 3D Glass Button Secondary -->
+                    <a href="#tentang" class="inline-flex items-center gap-2 px-4 py-2 sm:px-7 sm:py-3.5 rounded-2xl bg-white/5 hover:bg-white/10 backdrop-blur-md text-white text-[10px] sm:text-xs md:text-sm font-semibold border border-white/15 shadow-lg hover:-translate-y-1 active:translate-y-0 transition-all duration-300">
                         HUBUNGI KAMI
                     </a>
                 </div>
             </div>
 
-            <!-- LOGO HUT RI 81 (Kanan - Span 5 di semua ukuran layar) -->
-            <div class="col-span-5 flex justify-center items-center py-2 sm:py-6">
-                <div class="bg-white/10 backdrop-blur-md text-white rounded-2xl sm:rounded-3xl p-3 sm:p-8 border border-white/20 text-center w-full max-w-xs shadow-xl">
-                    <div class="text-[9px] sm:text-xs font-bold uppercase tracking-widest text-red-200 mb-0.5 sm:mb-1">Nusantara Baru</div>
-                    <div class="text-3xl sm:text-6xl font-black tracking-tighter my-1 sm:my-2 text-white">81<span class="text-sm sm:text-2xl font-bold">TH</span></div>
-                    <div class="text-[8px] sm:text-xs font-bold uppercase tracking-wider text-white border-t border-b border-white/30 py-1 sm:py-2 my-1 sm:my-2">
-                        INDONESIA MAJU
+            <!-- LOGO / KARTU HUT RI 3D FLOATING (Kanan - Span 5) -->
+            <div class="col-span-5 flex justify-center items-center py-2 sm:py-6 relative perspective-1000">
+                <!-- Decorative 3D Light Ring Behind Card -->
+                <div class="absolute w-40 h-40 sm:w-72 sm:h-72 bg-gradient-to-tr from-red-600 to-amber-500 rounded-full blur-2xl opacity-40 animate-pulse"></div>
+
+                <!-- 3D Floating Glass Card -->
+                <div class="relative w-full max-w-xs bg-gradient-to-b from-white/20 via-white/10 to-white/5 backdrop-blur-xl rounded-3xl p-4 sm:p-8 border border-white/25 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transform hover:rotate-2 hover:scale-[1.02] transition-all duration-500 group">
+                    
+                    <!-- Inner 3D Embossed Container -->
+                    <div class="relative z-10 text-center">
+                        <div class="inline-block px-3 py-1 rounded-full bg-red-600/80 border border-red-400/30 text-[9px] sm:text-xs font-bold uppercase tracking-widest text-amber-200 mb-1 sm:mb-2 shadow-inner">
+                            Nusantara Baru
+                        </div>
+
+                        <!-- 3D Text Number -->
+                        <div class="relative my-1 sm:my-2">
+                            <span class="text-4xl sm:text-7xl font-black tracking-tighter bg-gradient-to-b from-white via-slate-100 to-slate-400 bg-clip-text text-transparent drop-shadow-[0_8px_10px_rgba(0,0,0,0.8)]">
+                                81
+                            </span>
+                            <span class="text-base sm:text-3xl font-extrabold text-red-500 drop-shadow-[0_4px_8px_rgba(239,68,68,0.5)] ml-1">TH</span>
+                        </div>
+
+                        <div class="text-[9px] sm:text-xs font-black uppercase tracking-wider text-white border-y border-white/20 py-1.5 sm:py-2.5 my-2 bg-black/20 rounded-xl backdrop-blur-sm">
+                            INDONESIA MAJU
+                        </div>
+
+                        <p class="text-[8px] sm:text-[11px] text-slate-300 font-medium">HUT Republik Indonesia 2026</p>
                     </div>
-                    <p class="text-[8px] sm:text-[10px] text-red-100 mt-1 sm:mt-2">HUT Republik Indonesia 2026</p>
+
+                    <!-- Glass Reflect Effect Overlay -->
+                    <div class="absolute inset-0 rounded-3xl bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
                 </div>
             </div>
         </div>
@@ -127,7 +165,7 @@
         <!-- GELOMBANG PUTIH DI BAWAH HERO -->
         <div class="absolute inset-x-0 bottom-0 pointer-events-none">
             <svg class="w-full h-8 sm:h-12 md:h-16 text-white fill-current" viewBox="0 0 1440 70" preserveAspectRatio="none">
-                <path d="M0,32L120,42.7C240,53,480,75,720,64C960,53,1200,11,1320,0L1440,0L1440,70L1320,70C1200,70,960,70,720,70C480,70,240,70,120,70L0,70Z"></path>
+                <path d="M0,32L120,42.7C240,53,480,75,720,64C960,53,1200,11,1320,0L1440,0L1440,70L1320,70C480,70,240,70,720,70C480,70,240,70,120,70L0,70Z"></path>
             </svg>
         </div>
     </section>
