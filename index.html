@@ -2,8 +2,7 @@
 <html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <!-- Mengunci lebar viewport ke 1200px agar tampilan HP sama persis dengan Desktop/Laptop -->
-    <meta name="viewport" content="width=1200">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karang Taruna RW 005</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -15,7 +14,6 @@
     <style>
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
-            min-width: 1200px; /* Menjaga agar layout tetap berukuran standar laptop */
         }
         .font-cinema {
             font-family: 'Cinzel', serif;
@@ -67,12 +65,12 @@
 
     <!-- NAVBAR -->
     <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm transition-all duration-300">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-            <div class="flex items-center space-x-3 group cursor-pointer">
-                <div class="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center text-white font-bold text-lg shadow-md overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-2 sm:space-x-3 group cursor-pointer">
+                <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-red-600 flex items-center justify-center text-white font-bold text-lg shadow-md overflow-hidden shrink-0">
                     <img src="logo kartar rw.jpeg" alt="Logo Karang Taruna RW 005" class="w-full h-full object-cover">
                 </div>
-                <span class="font-bold text-gray-900 text-base md:text-lg tracking-tight">Karang Taruna RW 005</span>
+                <span class="font-bold text-gray-900 text-sm sm:text-base md:text-lg tracking-tight whitespace-nowrap">Karang Taruna RW 005</span>
             </div>
             <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600">
                 <a href="#beranda" class="text-red-600 font-semibold border-b-2 border-red-600 pb-1">Beranda</a>
@@ -82,96 +80,97 @@
                 <a href="#galeri" class="hover:text-red-600 transition">Galeri</a>
                 <a href="#berita" class="hover:text-red-600 transition">Berita</a>
             </div>
-            <a href="#pendaftaran" class="bg-red-600 hover:bg-red-700 text-white font-medium text-sm px-5 py-2.5 rounded-full shadow-md transition duration-300 flex items-center gap-2">
-                <i class="fa-solid fa-user-plus text-xs"></i> Daftar
+            <a href="#pendaftaran" class="bg-red-600 hover:bg-red-700 text-white font-medium text-xs sm:text-sm px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-full shadow-md transition duration-300 flex items-center gap-1.5 sm:gap-2 shrink-0">
+                <i class="fa-solid fa-user-plus text-[10px] sm:text-xs"></i> Daftar
             </a>
         </div>
     </nav>
 
     <!-- HERO SECTION (TEMA HUT RI SESUAI VIDEO) -->
-    <section id="beranda" class="relative bg-red-600 text-white pt-10 pb-20 overflow-hidden">
-        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative z-10">
-            <div>
-                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-[11px] font-semibold tracking-wide uppercase mb-4 text-white">
-                    <span class="w-2 h-2 rounded-full bg-yellow-400"></span>
+    <section id="beranda" class="relative bg-red-600 text-white pt-6 sm:pt-10 pb-16 sm:pb-20 overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-12 gap-3 sm:gap-8 items-center relative z-10">
+            <!-- Kolom Teks (Kiri - Span 7 di semua ukuran layar) -->
+            <div class="col-span-7">
+                <span class="inline-flex items-center gap-1.5 sm:gap-2 px-2 py-0.5 sm:px-3 sm:py-1 rounded-full bg-white/10 text-[9px] sm:text-[11px] font-semibold tracking-wide uppercase mb-2 sm:mb-4 text-white">
+                    <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-yellow-400"></span>
                     SELAMAT DATANG DI WEBSITE KARANG TARUNA
                 </span>
-                <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4 tracking-tight">
+                <h1 class="text-xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-2 sm:mb-4 tracking-tight">
                     Karang Taruna <br> <span class="text-white">RW 005</span>
                 </h1>
-                <p class="text-red-100 text-sm md:text-base mb-8 max-w-lg leading-relaxed">
+                <p class="text-red-100 text-[11px] sm:text-sm md:text-base mb-4 sm:mb-8 max-w-lg leading-relaxed">
                     Kami percaya setiap pemuda memiliki potensi. Bersama, kita menciptakan kegiatan yang bermanfaat, penuh semangat, dan membawa kebahagiaan untuk desa.
                 </p>
-                <div class="flex flex-wrap items-center gap-4">
-                    <a href="#pendaftaran" class="bg-white text-red-600 hover:bg-red-50 font-bold px-6 py-3 rounded-full text-xs md:text-sm shadow-md transition duration-300 flex items-center gap-2">
-                        GABUNG SEKARANG <i class="fa-solid fa-arrow-right text-xs"></i>
+                <div class="flex flex-wrap items-center gap-2 sm:gap-4">
+                    <a href="#pendaftaran" class="bg-white text-red-600 hover:bg-red-50 font-bold px-3 py-1.5 sm:px-6 sm:py-3 rounded-full text-[10px] sm:text-xs md:text-sm shadow-md transition duration-300 flex items-center gap-1 sm:gap-2">
+                        GABUNG SEKARANG <i class="fa-solid fa-arrow-right text-[10px] sm:text-xs"></i>
                     </a>
-                    <a href="#tentang" class="border border-white hover:bg-white/10 text-white font-semibold px-6 py-3 rounded-full text-xs md:text-sm transition duration-300">
+                    <a href="#tentang" class="border border-white hover:bg-white/10 text-white font-semibold px-3 py-1.5 sm:px-6 sm:py-3 rounded-full text-[10px] sm:text-xs md:text-sm transition duration-300">
                         HUBUNGI KAMI
                     </a>
                 </div>
             </div>
 
-            <!-- LOGO HUT RI 81 (SISI KANAN HERO) -->
-            <div class="flex justify-center md:justify-end items-center py-6">
-                <div class="bg-white/10 backdrop-blur-md text-white rounded-3xl p-8 border border-white/20 text-center max-w-xs shadow-xl">
-                    <div class="text-xs font-bold uppercase tracking-widest text-red-200 mb-1">Nusantara Baru</div>
-                    <div class="text-6xl font-black tracking-tighter my-2 text-white">81<span class="text-2xl font-bold">TH</span></div>
-                    <div class="text-xs font-bold uppercase tracking-wider text-white border-t border-b border-white/30 py-2 my-2">
+            <!-- LOGO HUT RI 81 (Kanan - Span 5 di semua ukuran layar) -->
+            <div class="col-span-5 flex justify-center items-center py-2 sm:py-6">
+                <div class="bg-white/10 backdrop-blur-md text-white rounded-2xl sm:rounded-3xl p-3 sm:p-8 border border-white/20 text-center w-full max-w-xs shadow-xl">
+                    <div class="text-[9px] sm:text-xs font-bold uppercase tracking-widest text-red-200 mb-0.5 sm:mb-1">Nusantara Baru</div>
+                    <div class="text-3xl sm:text-6xl font-black tracking-tighter my-1 sm:my-2 text-white">81<span class="text-sm sm:text-2xl font-bold">TH</span></div>
+                    <div class="text-[8px] sm:text-xs font-bold uppercase tracking-wider text-white border-t border-b border-white/30 py-1 sm:py-2 my-1 sm:my-2">
                         INDONESIA MAJU
                     </div>
-                    <p class="text-[10px] text-red-100 mt-2">HUT Republik Indonesia 2026</p>
+                    <p class="text-[8px] sm:text-[10px] text-red-100 mt-1 sm:mt-2">HUT Republik Indonesia 2026</p>
                 </div>
             </div>
         </div>
 
         <!-- GELOMBANG PUTIH DI BAWAH HERO -->
         <div class="absolute inset-x-0 bottom-0 pointer-events-none">
-            <svg class="w-full h-12 md:h-16 text-white fill-current" viewBox="0 0 1440 70" preserveAspectRatio="none">
+            <svg class="w-full h-8 sm:h-12 md:h-16 text-white fill-current" viewBox="0 0 1440 70" preserveAspectRatio="none">
                 <path d="M0,32L120,42.7C240,53,480,75,720,64C960,53,1200,11,1320,0L1440,0L1440,70L1320,70C1200,70,960,70,720,70C480,70,240,70,120,70L0,70Z"></path>
             </svg>
         </div>
     </section>
 
     <!-- TENTANG KAMI SECTION -->
-    <section id="tentang" class="py-16 px-6">
+    <section id="tentang" class="py-12 sm:py-16 px-4 sm:px-6">
         <div class="max-w-6xl mx-auto">
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <span class="text-xs font-bold tracking-widest text-red-600 uppercase bg-red-50 px-3 py-1 rounded-full border border-red-100">TENTANG KAMI</span>
-                <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 mt-3">Organisasi Pemuda RW 005</h2>
+            <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
+                <span class="text-[10px] sm:text-xs font-bold tracking-widest text-red-600 uppercase bg-red-50 px-3 py-1 rounded-full border border-red-100">TENTANG KAMI</span>
+                <h2 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-gray-900 mt-3">Organisasi Pemuda RW 005</h2>
                 <div class="w-12 h-1 bg-red-600 mx-auto mt-3 rounded-full"></div>
 
-                <div class="mt-8 rounded-2xl overflow-hidden border border-gray-100 shadow-lg bg-slate-900 aspect-[16/9]">
+                <div class="mt-6 sm:mt-8 rounded-2xl overflow-hidden border border-gray-100 shadow-lg bg-slate-900 aspect-[16/9]">
                     <img src="malam puncak rw - Copy.jpeg" alt="Foto Pemuda Karang Taruna RW 005" class="w-full h-full object-cover img-hover-zoom">
                 </div>
 
-                <p class="text-gray-600 text-xs md:text-sm mt-6 leading-relaxed">
+                <p class="text-gray-600 text-xs md:text-sm mt-4 sm:mt-6 leading-relaxed">
                     Karang Taruna RW 005 adalah wadah organisasi sosial kemasyarakatan yang berkembang atas dasar kesadaran dan tanggung jawab sosial. Berada di RW 005, Kecamatan Jagakarsa, Kelurahan Lenteng Agung, kami menjadi pusat pengembangan generasi muda untuk berkreasi dan berperan aktif pembangunan desa.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-red-50/50 p-6 rounded-2xl border border-red-100 text-center">
-                    <div class="w-12 h-12 bg-red-600 text-white rounded-xl flex items-center justify-center text-xl font-bold mx-auto mb-4 shadow-sm">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+                <div class="bg-red-50/50 p-5 sm:p-6 rounded-2xl border border-red-100 text-center">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-red-600 text-white rounded-xl flex items-center justify-center text-lg sm:text-xl font-bold mx-auto mb-3 sm:mb-4 shadow-sm">
                         <i class="fa-solid fa-graduation-cap"></i>
                     </div>
-                    <h3 class="font-bold text-gray-900 text-sm mb-1">Pengembangan Pemuda</h3>
+                    <h3 class="font-bold text-gray-900 text-xs sm:text-sm mb-1">Pengembangan Pemuda</h3>
                     <p class="text-gray-500 text-xs leading-relaxed">Melatih potensi dan bakat pemuda desa dalam berbagai bidang keahlian dan kepemimpinan.</p>
                 </div>
 
-                <div class="bg-red-50/50 p-6 rounded-2xl border border-red-100 text-center">
-                    <div class="w-12 h-12 bg-red-600 text-white rounded-xl flex items-center justify-center text-xl font-bold mx-auto mb-4 shadow-sm">
+                <div class="bg-red-50/50 p-5 sm:p-6 rounded-2xl border border-red-100 text-center">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-red-600 text-white rounded-xl flex items-center justify-center text-lg sm:text-xl font-bold mx-auto mb-3 sm:mb-4 shadow-sm">
                         <i class="fa-solid fa-hand-holding-heart"></i>
                     </div>
-                    <h3 class="font-bold text-gray-900 text-sm mb-1">Sosial Kemasyarakatan</h3>
+                    <h3 class="font-bold text-gray-900 text-xs sm:text-sm mb-1">Sosial Kemasyarakatan</h3>
                     <p class="text-gray-500 text-xs leading-relaxed">Aktif dalam kegiatan sosial, tanggap bencana, dan bakti warga di lingkungan RW 005.</p>
                 </div>
 
-                <div class="bg-red-50/50 p-6 rounded-2xl border border-red-100 text-center">
-                    <div class="w-12 h-12 bg-red-600 text-white rounded-xl flex items-center justify-center text-xl font-bold mx-auto mb-4 shadow-sm">
+                <div class="bg-red-50/50 p-5 sm:p-6 rounded-2xl border border-red-100 text-center">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-red-600 text-white rounded-xl flex items-center justify-center text-lg sm:text-xl font-bold mx-auto mb-3 sm:mb-4 shadow-sm">
                         <i class="fa-solid fa-people-group"></i>
                     </div>
-                    <h3 class="font-bold text-gray-900 text-sm mb-1">Gotong Royong</h3>
+                    <h3 class="font-bold text-gray-900 text-xs sm:text-sm mb-1">Gotong Royong</h3>
                     <p class="text-gray-500 text-xs leading-relaxed">Menjaga serta merawat kebersamaan dan kekeluargaan antar warga RW 005 secara konsisten.</p>
                 </div>
             </div>
@@ -179,267 +178,267 @@
     </section>
 
     <!-- VISI & MISI SECTION -->
-   <section id="visi-misi" class="py-16 px-6 bg-gray-50/70">
-  <div class="max-w-5xl mx-auto">
-    <!-- Header Section -->
-    <div class="text-center mb-10">
-      <span class="text-xs font-bold tracking-widest text-red-600 uppercase bg-red-100 px-3 py-1 rounded-full">About Us</span>
-      <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 mt-3">Visi & Misi</h2>
-    </div>
+    <section id="visi-misi" class="py-12 sm:py-16 px-4 sm:px-6 bg-gray-50/70">
+      <div class="max-w-5xl mx-auto">
+        <!-- Header Section -->
+        <div class="text-center mb-8 sm:mb-10">
+          <span class="text-[10px] sm:text-xs font-bold tracking-widest text-red-600 uppercase bg-red-100 px-3 py-1 rounded-full">About Us</span>
+          <h2 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-gray-900 mt-3">Visi & Misi</h2>
+        </div>
 
-    <!-- Container Grid 2 Kolom -->
-    <div class="grid md:grid-cols-2 gap-6">
-      
-      <!-- Box Visi -->
-      <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-center">
-        <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center gap-2">
-          <span class="w-2 h-6 bg-red-600 rounded-full"></span>
-          Visi
-        </h3>
-        <p class="text-gray-600 text-sm md:text-base leading-relaxed">
-          Mewujudkan generasi muda yang kreatif, mandiri, peduli lingkungan, serta aktif dalam membangun kebersamaan dan kemajuan masyarakat.
-        </p>
+        <!-- Container Grid 2 Kolom -->
+        <div class="grid md:grid-cols-2 gap-4 sm:gap-6">
+          
+          <!-- Box Visi -->
+          <div class="bg-white p-6 sm:p-8 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-center">
+            <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 flex items-center gap-2">
+              <span class="w-2 h-5 sm:h-6 bg-red-600 rounded-full"></span>
+              Visi
+            </h3>
+            <p class="text-gray-600 text-xs sm:text-sm md:text-base leading-relaxed">
+              Mewujudkan generasi muda yang kreatif, mandiri, peduli lingkungan, serta aktif dalam membangun kebersamaan dan kemajuan masyarakat.
+            </p>
+          </div>
+
+          <!-- Box Misi -->
+          <div class="bg-white p-6 sm:p-8 rounded-2xl border border-gray-100 shadow-sm">
+            <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4 flex items-center gap-2">
+              <span class="w-2 h-5 sm:h-6 bg-red-600 rounded-full"></span>
+              Misi
+            </h3>
+            <ul class="space-y-3 sm:space-y-4">
+              <li class="flex items-start gap-3">
+                <span class="w-5 h-5 sm:w-6 sm:h-6 bg-red-600 text-white text-[10px] sm:text-xs rounded-lg flex items-center justify-center shrink-0 font-bold">1</span>
+                <p class="text-gray-700 text-xs md:text-sm leading-relaxed">Membangun semangat gotong royong dan kebersamaan.</p>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-5 h-5 sm:w-6 sm:h-6 bg-red-600 text-white text-[10px] sm:text-xs rounded-lg flex items-center justify-center shrink-0 font-bold">2</span>
+                <p class="text-gray-700 text-xs md:text-sm leading-relaxed">Mendorong partisipasi aktif pemuda dalam pembangunan lingkungan.</p>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-5 h-5 sm:w-6 sm:h-6 bg-red-600 text-white text-[10px] sm:text-xs rounded-lg flex items-center justify-center shrink-0 font-bold">3</span>
+                <p class="text-gray-700 text-xs md:text-sm leading-relaxed">Meningkatkan kepedulian terhadap lingkungan dan kebersihan masyarakat.</p>
+              </li>
+            </ul>
+          </div>
+
+        </div>
       </div>
+    </section>
 
-      <!-- Box Misi -->
-      <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm">
-        <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-          <span class="w-2 h-6 bg-red-600 rounded-full"></span>
-          Misi
-        </h3>
-        <ul class="space-y-4">
-          <li class="flex items-start gap-3">
-            <span class="w-6 h-6 bg-red-600 text-white text-xs rounded-lg flex items-center justify-center shrink-0 font-bold">1</span>
-            <p class="text-gray-700 text-xs md:text-sm leading-relaxed">Membangun semangat gotong royong dan kebersamaan.</p>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="w-6 h-6 bg-red-600 text-white text-xs rounded-lg flex items-center justify-center shrink-0 font-bold">2</span>
-            <p class="text-gray-700 text-xs md:text-sm leading-relaxed">Mendorong partisipasi aktif pemuda dalam pembangunan lingkungan.</p>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="w-6 h-6 bg-red-600 text-white text-xs rounded-lg flex items-center justify-center shrink-0 font-bold">3</span>
-            <p class="text-gray-700 text-xs md:text-sm leading-relaxed">Meningkatkan kepedulian terhadap lingkungan dan kebersihan masyarakat.</p>
-          </li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-    <!-- TIM KAMI SECTION (SESUAI VIDEO) -->
-    <section id="tim" class="py-16 px-6">
+    <!-- TIM KAMI SECTION -->
+    <section id="tim" class="py-12 sm:py-16 px-4 sm:px-6">
         <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-12">
-                <span class="text-xs font-bold tracking-widest text-red-600 uppercase bg-red-50 px-3 py-1 rounded-full border border-red-100">STRUCTURE</span>
-                <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 mt-3">Our Team</h2>
+            <div class="text-center mb-8 sm:mb-12">
+                <span class="text-[10px] sm:text-xs font-bold tracking-widest text-red-600 uppercase bg-red-50 px-3 py-1 rounded-full border border-red-100">STRUCTURE</span>
+                <h2 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-gray-900 mt-3">Our Team</h2>
                 <p class="text-gray-500 text-xs md:text-sm mt-1">Bersama membangun tim yang solid, kolaboratif, dan berdedikasi untuk menciptakan perubahan positif.</p>
             </div>
 
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6">
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
                 <!-- ANGGOTA 1 -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-3 group">
-                    <div class="aspect-square rounded-xl bg-gray-100 mb-3 overflow-hidden">
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
+                    <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="annas tasya hartini.jpeg" alt="Annas tasya hartini" class="w-full h-full object-cover img-hover-zoom">
                     </div>
-                    <h4 class="font-bold text-gray-900 text-xs md:text-sm group-hover:text-red-600 transition">Annas tasya hartini</h4>
+                    <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Annas tasya hartini</h4>
                 </div>
                 
                 <!-- ANGGOTA 2 -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-3 group">
-                    <div class="aspect-square rounded-xl bg-gray-100 mb-3 overflow-hidden">
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
+                    <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="Arsya Afnandya Alfawas.jpeg" alt="Arsya Afnandya Alfawas" class="w-full h-full object-cover img-hover-zoom">
                     </div>
-                    <h4 class="font-bold text-gray-900 text-xs md:text-sm group-hover:text-red-600 transition">Arsya Afnandya Alfawas</h4>
+                    <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Arsya Afnandya Alfawas</h4>
                 </div>
 
                 <!-- ANGGOTA 3 -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-3 group">
-                    <div class="aspect-square rounded-xl bg-gray-100 mb-3 overflow-hidden">
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
+                    <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="Daffa Raihan Ghifari.jpeg" alt="Daffa Raihan Ghifari" class="w-full h-full object-cover img-hover-zoom">
                     </div>
-                    <h4 class="font-bold text-gray-900 text-xs md:text-sm group-hover:text-red-600 transition">Daffa Raihan Ghifari</h4>
+                    <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Daffa Raihan Ghifari</h4>
                 </div>
 
                 <!-- ANGGOTA 4 -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-3 group">
-                    <div class="aspect-square rounded-xl bg-gray-100 mb-3 overflow-hidden">
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
+                    <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="Joshua Christyan Prakoso bang.jpeg" alt="Joshua Christyan Prakoso" class="w-full h-full object-cover img-hover-zoom">
                     </div>
-                    <h4 class="font-bold text-gray-900 text-xs md:text-sm group-hover:text-red-600 transition">Joshua Christyan Prakoso</h4>
+                    <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Joshua Christyan Prakoso</h4>
                 </div>
 
                 <!-- ANGGOTA 5 -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-3 group">
-                    <div class="aspect-square rounded-xl bg-gray-100 mb-3 overflow-hidden">
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
+                    <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="Kayla Rubby Denisya.jpeg" alt="Kayla Rubby Denisya" class="w-full h-full object-cover img-hover-zoom">
                     </div>
-                    <h4 class="font-bold text-gray-900 text-xs md:text-sm group-hover:text-red-600 transition">Kayla Rubby Denisya</h4>
+                    <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Kayla Rubby Denisya</h4>
                 </div>
 
                 <!-- ANGGOTA 6 -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-3 group">
-                    <div class="aspect-square rounded-xl bg-gray-100 mb-3 overflow-hidden">
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
+                    <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="Bagas Satya.jpeg" alt="Bagas Satya" class="w-full h-full object-cover img-hover-zoom">
                     </div>
-                    <h4 class="font-bold text-gray-900 text-xs md:text-sm group-hover:text-red-600 transition">Bagas Satya</h4>
+                    <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Bagas Satya</h4>
                 </div>
 
                 <!-- ANGGOTA 7 -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-3 group">
-                    <div class="aspect-square rounded-xl bg-gray-100 mb-3 overflow-hidden">
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
+                    <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="Nayla Putri Adilla.jpeg" alt="Nayla Putri Adilla" class="w-full h-full object-cover img-hover-zoom">
                     </div>
-                    <h4 class="font-bold text-gray-900 text-xs md:text-sm group-hover:text-red-600 transition">Nayla Putri Adilla</h4>
+                    <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Nayla Putri Adilla</h4>
                 </div>
 
                 <!-- ANGGOTA 8 -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-3 group">
-                    <div class="aspect-square rounded-xl bg-gray-100 mb-3 overflow-hidden">
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
+                    <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="rizki.jpeg" alt="Rizki" class="w-full h-full object-cover img-hover-zoom">
                     </div>
-                    <h4 class="font-bold text-gray-900 text-xs md:text-sm group-hover:text-red-600 transition">Rizki</h4>
+                    <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Rizki</h4>
                 </div>
 
                 <!-- ANGGOTA 9 -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-3 group">
-                    <div class="aspect-square rounded-xl bg-gray-100 mb-3 overflow-hidden">
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
+                    <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="Srikandi ayu wandira.jpeg" alt="Srikandi ayu wandira" class="w-full h-full object-cover img-hover-zoom">
                     </div>
-                    <h4 class="font-bold text-gray-900 text-xs md:text-sm group-hover:text-red-600 transition">Srikandi ayu wandira</h4>
+                    <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Srikandi ayu wandira</h4>
                 </div>
 
                 <!-- ANGGOTA 10 -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-3 group">
-                    <div class="aspect-square rounded-xl bg-gray-100 mb-3 overflow-hidden">
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
+                    <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="REZA ANANDA PUTRA.jpeg" alt="Reza Ananda Putra" class="w-full h-full object-cover img-hover-zoom">
                     </div>
-                    <h4 class="font-bold text-gray-900 text-xs md:text-sm group-hover:text-red-600 transition">Reza Ananda Putra</h4>
+                    <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Reza Ananda Putra</h4>
                 </div>
 
                 <!-- ANGGOTA 11 -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-3 group">
-                    <div class="aspect-square rounded-xl bg-gray-100 mb-3 overflow-hidden">
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
+                    <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="Muhammad Tamiul.jpeg" alt="Muhammad Tamiul" class="w-full h-full object-cover img-hover-zoom">
                     </div>
-                    <h4 class="font-bold text-gray-900 text-xs md:text-sm group-hover:text-red-600 transition">Muhammad Tamiul</h4>
+                    <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Muhammad Tamiul</h4>
                 </div>
 
                 <!-- ANGGOTA 12 -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-3 group">
-                    <div class="aspect-square rounded-xl bg-gray-100 mb-3 overflow-hidden">
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
+                    <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="Fahmi.jpeg" alt="Fahmi" class="w-full h-full object-cover img-hover-zoom">
                     </div>
-                    <h4 class="font-bold text-gray-900 text-xs md:text-sm group-hover:text-red-600 transition">Fahmi</h4>
+                    <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Fahmi</h4>
                 </div>
 
                 <!-- ANGGOTA 13 -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-3 group">
-                    <div class="aspect-square rounded-xl bg-gray-100 mb-3 overflow-hidden">
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
+                    <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="Irfansyah Ariyanto Pragaman.jpeg" alt="Irfansyah Ariyanto Pragaman" class="w-full h-full object-cover img-hover-zoom">
                     </div>
-                    <h4 class="font-bold text-gray-900 text-xs md:text-sm group-hover:text-red-600 transition">Irfansyah Ariyanto Pragaman</h4>
+                    <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Irfansyah Ariyanto Pragaman</h4>
                 </div>
 
                 <!-- ANGGOTA 14 -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-3 group">
-                    <div class="aspect-square rounded-xl bg-gray-100 mb-3 overflow-hidden">
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
+                    <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="Isnandar.jpeg" alt="Isnandar" class="w-full h-full object-cover img-hover-zoom">
                     </div>
-                    <h4 class="font-bold text-gray-900 text-xs md:text-sm group-hover:text-red-600 transition">Isnandar</h4>
+                    <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Isnandar</h4>
                 </div>
 
                 <!-- ANGGOTA 15 -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-3 group">
-                    <div class="aspect-square rounded-xl bg-gray-100 mb-3 overflow-hidden">
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
+                    <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="Jihan nabilah.jpeg" alt="Jihan Nabilah" class="w-full h-full object-cover img-hover-zoom">
                     </div>
-                    <h4 class="font-bold text-gray-900 text-xs md:text-sm group-hover:text-red-600 transition">Jihan Nabilah</h4>
+                    <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Jihan Nabilah</h4>
                 </div>
 
                 <!-- ANGGOTA 16 -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-3 group">
-                    <div class="aspect-square rounded-xl bg-gray-100 mb-3 overflow-hidden">
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
+                    <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="Raissa Dwi Rahmah.jpeg" alt="Raissa Dwi Rahmah" class="w-full h-full object-cover img-hover-zoom">
                     </div>
-                    <h4 class="font-bold text-gray-900 text-xs md:text-sm group-hover:text-red-600 transition">Raissa Dwi Rahmah</h4>
+                    <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Raissa Dwi Rahmah</h4>
                 </div>
 
                 <!-- ANGGOTA 17 -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-3 group">
-                    <div class="aspect-square rounded-xl bg-gray-100 mb-3 overflow-hidden">
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
+                    <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="iqbal hazimul fikri.jpeg" alt="Iqbal Hazimul Fikri" class="w-full h-full object-cover img-hover-zoom">
                     </div>
-                    <h4 class="font-bold text-gray-900 text-xs md:text-sm group-hover:text-red-600 transition">Iqbal Hazimul Fikri</h4>
+                    <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Iqbal Hazimul Fikri</h4>
                 </div>
 
                 <!-- ANGGOTA 18 -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-3 group">
-                    <div class="aspect-square rounded-xl bg-gray-100 mb-3 overflow-hidden">
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
+                    <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="Subkhan Hasbi Anwar L.jpeg" alt="Subkhan Hasbi Anwar L" class="w-full h-full object-cover img-hover-zoom">
                     </div>
-                    <h4 class="font-bold text-gray-900 text-xs md:text-sm group-hover:text-red-600 transition">Subkhan Hasbi Anwar L</h4>
+                    <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Subkhan Hasbi Anwar L</h4>
                 </div>
 
                 <!-- ANGGOTA 19 -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-3 group">
-                    <div class="aspect-square rounded-xl bg-gray-100 mb-3 overflow-hidden">
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
+                    <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="Thamiafifah Sayyidahutami.jpeg" alt="Thamiafifah Sayyidahutami" class="w-full h-full object-cover img-hover-zoom">
                     </div>
-                    <h4 class="font-bold text-gray-900 text-xs md:text-sm group-hover:text-red-600 transition">Thamiafifah Sayyidahutami</h4>
+                    <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Thamiafifah Sayyidahutami</h4>
                 </div>
 
                 <!-- ANGGOTA 20 -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-3 group">
-                    <div class="aspect-square rounded-xl bg-gray-100 mb-3 overflow-hidden">
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
+                    <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="faadiyah yasmin.jpeg" alt="Faadiyah Yasmin" class="w-full h-full object-cover img-hover-zoom">
                     </div>
-                    <h4 class="font-bold text-gray-900 text-xs md:text-sm group-hover:text-red-600 transition">Faadiyah Yasmin</h4>
+                    <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Faadiyah Yasmin</h4>
                 </div>
 
                 <!-- ANGGOTA 21 -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-3 group">
-                    <div class="aspect-square rounded-xl bg-gray-100 mb-3 overflow-hidden">
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
+                    <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="aulia aizhimaharani.jpeg" alt="Aulia Aizhimaharani" class="w-full h-full object-cover img-hover-zoom">
                     </div>
-                    <h4 class="font-bold text-gray-900 text-xs md:text-sm group-hover:text-red-600 transition">Aulia Aizhimaharani</h4>
+                    <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Aulia Aizhimaharani</h4>
                 </div>
 
                 <!-- ANGGOTA 22 -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-3 group">
-                    <div class="aspect-square rounded-xl bg-gray-100 mb-3 overflow-hidden">
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
+                    <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="lukman.jpeg" alt="Lukman" class="w-full h-full object-cover img-hover-zoom">
                     </div>
-                    <h4 class="font-bold text-gray-900 text-xs md:text-sm group-hover:text-red-600 transition">Lukman</h4>
+                    <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Lukman</h4>
                 </div>
 
-                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-3 group">
-                    <div class="aspect-square rounded-xl bg-gray-100 mb-3 overflow-hidden">
-                        <img src="Mega.F.jpeg" alt="Lukman" class="w-full h-full object-cover img-hover-zoom">
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
+                    <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
+                        <img src="Mega.F.jpeg" alt="Mega F" class="w-full h-full object-cover img-hover-zoom">
                     </div>
-                    <h4 class="font-bold text-gray-900 text-xs md:text-sm group-hover:text-red-600 transition">Mega F</h4>
+                    <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Mega F</h4>
                 </div>
 
-                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-3 group">
-                    <div class="aspect-square rounded-xl bg-gray-100 mb-3 overflow-hidden">
-                        <img src="mohamad farhan.jpeg" alt="Lukman" class="w-full h-full object-cover img-hover-zoom">
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
+                    <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
+                        <img src="mohamad farhan.jpeg" alt="Mohamad Farhan" class="w-full h-full object-cover img-hover-zoom">
                     </div>
-                    <h4 class="font-bold text-gray-900 text-xs md:text-sm group-hover:text-red-600 transition">Mohamad Farhan</h4>
+                    <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Mohamad Farhan</h4>
                 </div>
 
                 <!-- ANGGOTA 23 -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-3 group">
-                    <div class="aspect-square rounded-xl bg-gray-100 mb-3 overflow-hidden">
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
+                    <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="Hildan Luth Nurdhonis.jpeg" alt="Hildan Luth Nurdhonis" class="w-full h-full object-cover img-hover-zoom">
                     </div>
-                    <h4 class="font-bold text-gray-900 text-xs md:text-sm group-hover:text-red-600 transition">Hildan Luth Nurdhonis</h4>
+                    <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Hildan Luth Nurdhonis</h4>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION TEATER MINI & DOKUMENTASI VIDEO (NEW SECTION) -->
-    <section id="teater" class="py-16 px-4 md:px-8 bg-slate-950 text-white relative overflow-hidden transition-all duration-500 cinema-overlay-dim">
+    <!-- SECTION TEATER MINI & DOKUMENTASI VIDEO -->
+    <section id="teater" class="py-12 sm:py-16 px-4 sm:px-6 md:px-8 bg-slate-950 text-white relative overflow-hidden transition-all duration-500 cinema-overlay-dim">
         
         <!-- Background Lighting & Atmosphere -->
         <div class="absolute inset-0 spotlight-beam opacity-80"></div>
@@ -448,12 +447,12 @@
         <div class="max-w-5xl mx-auto relative z-10">
             
             <!-- Header Teater -->
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4 border-b border-amber-500/20 pb-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-6 sm:mb-8 gap-4 border-b border-amber-500/20 pb-4 sm:pb-6">
                 <div>
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold tracking-widest uppercase mb-2">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-[10px] sm:text-xs font-bold tracking-widest uppercase mb-2">
                         <i class="fa-solid fa-clapperboard"></i> BIOSKOP & TEATER MINI
                     </div>
-                    <h2 class="text-3xl md:text-4xl font-black text-amber-100 font-cinema tracking-wide flex items-center gap-3">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-amber-100 font-cinema tracking-wide flex items-center gap-3">
                         LAYAR TANCAP RW 005
                     </h2>
                     <p class="text-slate-400 text-xs md:text-sm mt-1">Saksikan rekaman momen berharga, pentas seni, dan dokumentasi kebersamaan warga.</p>
@@ -466,27 +465,27 @@
             </div>
 
             <!-- FRAME STAGE TEATER UTAMA -->
-            <div class="relative bg-neutral-900 rounded-3xl p-3 md:p-6 border-2 border-amber-600/40 cinema-screen-shadow overflow-hidden">
+            <div class="relative bg-neutral-900 rounded-2xl sm:rounded-3xl p-2.5 sm:p-6 border border-amber-600/40 sm:border-2 cinema-screen-shadow overflow-hidden">
                 
                 <!-- Marquee Board Header Top -->
-                <div class="theatre-valance rounded-t-xl py-3 px-4 border-b-2 border-amber-500/50 flex justify-between items-center relative z-20">
+                <div class="theatre-valance rounded-t-xl py-2 sm:py-3 px-3 sm:px-4 border-b border-amber-500/50 sm:border-b-2 flex justify-between items-center relative z-20">
                     <!-- Marquee Lights Left -->
-                    <div class="flex space-x-2">
-                        <span class="w-2.5 h-2.5 bg-amber-300 rounded-full marquee-bulb"></span>
-                        <span class="w-2.5 h-2.5 bg-amber-300 rounded-full marquee-bulb"></span>
-                        <span class="w-2.5 h-2.5 bg-amber-300 rounded-full marquee-bulb"></span>
+                    <div class="flex space-x-1.5 sm:space-x-2">
+                        <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-amber-300 rounded-full marquee-bulb"></span>
+                        <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-amber-300 rounded-full marquee-bulb"></span>
+                        <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-amber-300 rounded-full marquee-bulb"></span>
                     </div>
 
-                    <div class="text-center">
-                        <span class="text-amber-200 font-cinema text-xs md:text-sm font-bold uppercase tracking-widest block drop-shadow">NOW SHOWING</span>
-                        <h3 class="text-white font-extrabold text-sm md:text-lg tracking-wider text-amber-400">DOKUMENTASI AFTER MOVIE RW 005</h3>
+                    <div class="text-center px-2">
+                        <span class="text-amber-200 font-cinema text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-widest block drop-shadow">NOW SHOWING</span>
+                        <h3 class="text-white font-extrabold text-xs sm:text-sm md:text-lg tracking-wider text-amber-400 line-clamp-1">DOKUMENTASI AFTER MOVIE RW 005</h3>
                     </div>
 
                     <!-- Marquee Lights Right -->
-                    <div class="flex space-x-2">
-                        <span class="w-2.5 h-2.5 bg-amber-300 rounded-full marquee-bulb"></span>
-                        <span class="w-2.5 h-2.5 bg-amber-300 rounded-full marquee-bulb"></span>
-                        <span class="w-2.5 h-2.5 bg-amber-300 rounded-full marquee-bulb"></span>
+                    <div class="flex space-x-1.5 sm:space-x-2">
+                        <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-amber-300 rounded-full marquee-bulb"></span>
+                        <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-amber-300 rounded-full marquee-bulb"></span>
+                        <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-amber-300 rounded-full marquee-bulb"></span>
                     </div>
                 </div>
 
@@ -494,8 +493,8 @@
                 <div class="relative flex items-center justify-center bg-black rounded-b-xl overflow-hidden aspect-video border border-neutral-800">
                     
                     <!-- Tirai Teater Kiri -->
-                    <div class="absolute top-0 bottom-0 left-0 w-8 md:w-16 theatre-curtain-left z-20 pointer-events-none flex flex-col justify-between py-4 items-end">
-                        <div class="w-1 md:w-2 h-full bg-black/30"></div>
+                    <div class="absolute top-0 bottom-0 left-0 w-5 sm:w-8 md:w-16 theatre-curtain-left z-20 pointer-events-none flex flex-col justify-between py-4 items-end">
+                        <div class="w-0.5 sm:w-1 md:w-2 h-full bg-black/30"></div>
                     </div>
 
                     <!-- Layar Pemutar Video HTML5 -->
@@ -507,33 +506,33 @@
                     </div>
 
                     <!-- Tirai Teater Kanan -->
-                    <div class="absolute top-0 bottom-0 right-0 w-8 md:w-16 theatre-curtain-right z-20 pointer-events-none flex flex-col justify-between py-4 items-start">
-                        <div class="w-1 md:w-2 h-full bg-black/30"></div>
+                    <div class="absolute top-0 bottom-0 right-0 w-5 sm:w-8 md:w-16 theatre-curtain-right z-20 pointer-events-none flex flex-col justify-between py-4 items-start">
+                        <div class="w-0.5 sm:w-1 md:w-2 h-full bg-black/30"></div>
                     </div>
 
                 </div>
 
                 <!-- FOOTER STAGE & KONTROL / DEKORASI PROYEKTOR -->
-                <div class="mt-4 pt-3 border-t border-neutral-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-400">
+                <div class="mt-3 sm:mt-4 pt-2.5 sm:pt-3 border-t border-neutral-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-neutral-400">
                     <div class="flex items-center gap-3">
-                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-red-900/60 text-red-300 font-mono text-[11px] border border-red-700/50">
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-red-900/60 text-red-300 font-mono text-[10px] sm:text-[11px] border border-red-700/50">
                             <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span> CINEMA HD
                         </span>
-                        <span><i class="fa-solid fa-video text-amber-500 mr-1"></i> Proyektor Karang Taruna RW 005</span>
+                        <span class="text-[11px] sm:text-xs"><i class="fa-solid fa-video text-amber-500 mr-1"></i> Proyektor Karang Taruna RW 005</span>
                     </div>
 
                     <!-- TIKET BIOSKOP DEKORATIF -->
-                    <div class="bg-gradient-to-r from-amber-600 to-amber-700 text-slate-950 font-mono font-bold px-4 py-1.5 rounded-lg shadow flex items-center gap-3 border border-amber-400/50">
-                        <i class="fa-solid fa-ticket text-sm"></i>
+                    <div class="bg-gradient-to-r from-amber-600 to-amber-700 text-slate-950 font-mono font-bold px-3 py-1 sm:px-4 sm:py-1.5 rounded-lg shadow flex items-center gap-2 sm:gap-3 border border-amber-400/50 text-[11px] sm:text-xs">
+                        <i class="fa-solid fa-ticket text-xs sm:text-sm"></i>
                         <span class="tracking-widest">TICKET: KARTAR-005</span>
-                        <span class="text-[10px] bg-slate-950 text-amber-400 px-1.5 py-0.5 rounded">VIP</span>
+                        <span class="text-[9px] sm:text-[10px] bg-slate-950 text-amber-400 px-1.5 py-0.5 rounded">VIP</span>
                     </div>
                 </div>
 
             </div>
 
-            <!-- DEKORASI PLAYLIST TEATER / PILIHAN VIDEO LAIN -->
-            <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <!-- DEKORASI PLAYLIST TEATER -->
+            <div class="mt-6 sm:mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
                 <div class="bg-neutral-900/80 rounded-xl p-3 border border-neutral-800 hover:border-amber-500/50 transition flex items-center gap-3 group cursor-pointer">
                     <div class="w-16 h-12 bg-neutral-800 rounded-lg overflow-hidden shrink-0 relative">
                         <img src="" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
@@ -578,15 +577,15 @@
     </section>
 
     <!-- GALERI KEGIATAN SECTION -->
-    <section id="galeri" class="py-16 bg-gray-50/70 px-6">
+    <section id="galeri" class="py-12 sm:py-16 bg-gray-50/70 px-4 sm:px-6">
         <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-12">
-                <span class="text-xs font-bold tracking-widest text-red-600 uppercase bg-red-100 px-3 py-1 rounded-full">DOKUMENTASI</span>
-                <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 mt-3">Galeri Kegiatan</h2>
+            <div class="text-center mb-8 sm:mb-12">
+                <span class="text-[10px] sm:text-xs font-bold tracking-widest text-red-600 uppercase bg-red-100 px-3 py-1 rounded-full">DOKUMENTASI</span>
+                <h2 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-gray-900 mt-3">Galeri Kegiatan</h2>
                 <p class="text-gray-500 text-xs md:text-sm mt-1">Momen kebersamaan Karang Taruna RW 005 dalam berbagai kegiatan.</p>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
                 <div class="rounded-2xl overflow-hidden border border-gray-100 shadow-sm aspect-video bg-gray-200">
                     <img src="malem puncak 2.jpeg" class="w-full h-full object-cover img-hover-zoom">
                 </div>
@@ -634,23 +633,23 @@
     </section>
 
     <!-- BERITA & ARTIKEL SECTION -->
-    <section id="berita" class="py-16 px-6">
+    <section id="berita" class="py-12 sm:py-16 px-4 sm:px-6">
         <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-12">
-                <span class="text-xs font-bold tracking-widest text-red-600 uppercase bg-red-50 px-3 py-1 rounded-full border border-red-100">KABAR TERBARU</span>
-                <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 mt-3">Berita & Artikel</h2>
+            <div class="text-center mb-8 sm:mb-12">
+                <span class="text-[10px] sm:text-xs font-bold tracking-widest text-red-600 uppercase bg-red-50 px-3 py-1 rounded-full border border-red-100">KABAR TERBARU</span>
+                <h2 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-gray-900 mt-3">Berita & Artikel</h2>
                 <p class="text-gray-500 text-xs md:text-sm mt-1">Cerita seputar kegiatan Karang Taruna RW 005 dan perkembangan program-program kami.</p>
             </div>
 
             <div class="max-w-3xl mx-auto">
-                <div class="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm flex flex-col md:flex-row gap-6 items-center">
+                <div class="bg-white rounded-2xl border border-gray-100 p-4 sm:p-6 shadow-sm flex flex-col md:flex-row gap-4 sm:gap-6 items-center">
                     <div class="w-full md:w-48 h-36 bg-gray-200 rounded-xl shrink-0 overflow-hidden">
                         <img src="dashboard kartar rw.jpeg" class="w-full h-full object-cover img-hover-zoom">
                     </div>
                     <div>
-                        <span class="text-[11px] font-semibold text-red-600 bg-red-50 px-3 py-1 rounded-full border border-red-100 inline-block mb-1">Malam Puncak 17 Agustus 2026</span>
-                        <h3 class="font-extrabold text-gray-900 text-base md:text-lg mt-1 mb-2">Acara Malam Puncak 17 Agustus di RW 005</h3>
-                        <p class="text-gray-500 text-xs leading-relaxed mb-4">
+                        <span class="text-[10px] sm:text-[11px] font-semibold text-red-600 bg-red-50 px-3 py-1 rounded-full border border-red-100 inline-block mb-1">Malam Puncak 17 Agustus 2026</span>
+                        <h3 class="font-extrabold text-gray-900 text-sm sm:text-base md:text-lg mt-1 mb-2">Acara Malam Puncak 17 Agustus di RW 005</h3>
+                        <p class="text-gray-500 text-xs leading-relaxed mb-3 sm:mb-4">
                             Rangkaian acara Malam Puncak 17 Agustus di RW 005 berlangsung meriah. Mulai dari Jalan Santai hingga Penampilan pentas seni mendapat antusias dari warga...
                         </p>
                         <a href="https://tamiul.blogspot.com/2026/09/jangan-hanya-percaya-pada-hasil-berikan.html" target="_blank" class="text-xs font-bold text-red-600 hover:text-red-700 inline-flex items-center gap-1.5">
@@ -663,61 +662,61 @@
     </section>
 
     <!-- SECTION PENDAFTARAN & DASHBOARD ADM -->
-    <section id="pendaftaran" class="py-16 bg-red-50/50 px-6">
+    <section id="pendaftaran" class="py-12 sm:py-16 bg-red-50/50 px-4 sm:px-6">
         <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-12">
-                <span class="text-xs font-bold tracking-widest text-red-600 uppercase bg-red-100 px-3 py-1 rounded-full">GABUNG BERSAMA KAMI</span>
-                <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 mt-3">Pendaftaran Anggota & Dashboard</h2>
+            <div class="text-center mb-8 sm:mb-12">
+                <span class="text-[10px] sm:text-xs font-bold tracking-widest text-red-600 uppercase bg-red-100 px-3 py-1 rounded-full">GABUNG BERSAMA KAMI</span>
+                <h2 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-gray-900 mt-3">Pendaftaran Anggota & Dashboard</h2>
                 <p class="text-gray-500 text-xs md:text-sm mt-1">Daftarkan diri Anda untuk menjadi bagian dari Karang Taruna RW 005</p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
                 <!-- FORMULIR PENDAFTARAN -->
-                <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
-                    <h3 class="font-bold text-base text-gray-900 mb-6 flex items-center gap-2">
+                <div class="bg-white p-5 sm:p-6 rounded-2xl border border-gray-100 shadow-sm">
+                    <h3 class="font-bold text-sm sm:text-base text-gray-900 mb-4 sm:mb-6 flex items-center gap-2">
                         <i class="fa-solid fa-user-plus text-red-600"></i>
                         Form Pendaftaran
                     </h3>
                     
-                    <form id="formPendaftaran" class="space-y-4">
+                    <form id="formPendaftaran" class="space-y-3.5 sm:space-y-4">
                         <div>
                             <label class="block text-xs font-semibold text-gray-600 mb-1">Nama Lengkap</label>
-                            <input type="text" name="nama" id="nama" required placeholder="Masukkan nama" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-xs focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-600 transition bg-white">
+                            <input type="text" name="nama" id="nama" required placeholder="Masukkan nama" class="w-full px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl border border-gray-200 text-xs focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-600 transition bg-white">
                         </div>
                         <div>
                             <label class="block text-xs font-semibold text-gray-600 mb-1">Nomor RT/RW</label>
-                            <input type="text" name="rt_rw" id="rtRw" required placeholder="Contoh: RT 016 / RW 005" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-xs focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-600 transition bg-white">
+                            <input type="text" name="rt_rw" id="rtRw" required placeholder="Contoh: RT 016 / RW 005" class="w-full px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl border border-gray-200 text-xs focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-600 transition bg-white">
                         </div>
                         <div>
                             <label class="block text-xs font-semibold text-gray-600 mb-1">Nomor WhatsApp</label>
-                            <input type="tel" name="telepon" id="telepon" required placeholder="08xxxxxxxxxx" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-xs focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-600 transition bg-white">
+                            <input type="tel" name="telepon" id="telepon" required placeholder="08xxxxxxxxxx" class="w-full px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl border border-gray-200 text-xs focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-600 transition bg-white">
                         </div>
                         <div>
                             <label class="block text-xs font-semibold text-gray-600 mb-1">Divisi Minat</label>
-                            <select name="divisi" id="divisi" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-xs focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-600 transition bg-white">
+                            <select name="divisi" id="divisi" class="w-full px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl border border-gray-200 text-xs focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-600 transition bg-white">
                                 <option value="Acara & Keagamaan">Acara & Keagamaan</option>
                                 <option value="Humas & Publikasi">Humas & Publikasi</option>
                                 <option value="Olahraga & Seni">Olahraga & Seni</option>
                                 <option value="Perlengkapan & Logistik">Perlengkapan & Logistik</option>
                             </select>
                         </div>
-                        <button type="submit" id="btnSubmit" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold text-xs py-3 rounded-xl shadow-md transition duration-300 flex items-center justify-center gap-2 mt-2">
+                        <button type="submit" id="btnSubmit" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold text-xs py-2.5 sm:py-3 rounded-xl shadow-md transition duration-300 flex items-center justify-center gap-2 mt-2">
                             <i class="fa-solid fa-paper-plane"></i> Kirim Pendaftaran
                         </button>
                     </form>
                 </div>
 
                 <!-- DASHBOARD DATA PENDAFTAR -->
-                <div class="lg:col-span-2 bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
-                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
+                <div class="lg:col-span-2 bg-white p-5 sm:p-6 rounded-2xl border border-gray-100 shadow-sm">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 sm:mb-6 gap-3">
                         <div>
-                            <h3 class="font-bold text-base text-gray-900 flex items-center gap-2">
+                            <h3 class="font-bold text-sm sm:text-base text-gray-900 flex items-center gap-2">
                                 <i class="fa-solid fa-table-list text-red-600"></i>
                                 Dashboard Pendaftar
                             </h3>
                             <p class="text-xs text-gray-500 mt-0.5">Data pendaftar baru yang masuk secara langsung.</p>
                         </div>
-                        <span class="bg-red-50 text-red-600 text-xs font-bold px-4 py-2 rounded-full border border-red-200 shadow-sm flex items-center gap-1.5">
+                        <span class="bg-red-50 text-red-600 text-xs font-bold px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full border border-red-200 shadow-sm flex items-center gap-1.5 self-start sm:self-auto">
                             <span class="w-2 h-2 rounded-full bg-red-600 animate-pulse"></span>
                             Total: <span id="totalPendaftar">0</span> Orang
                         </span>
@@ -727,11 +726,11 @@
                         <table class="w-full text-left border-collapse text-xs">
                             <thead>
                                 <tr class="border-b border-gray-100 bg-red-50 text-gray-700 font-bold">
-                                    <th class="p-3">Nama</th>
-                                    <th class="p-3">RT/RW</th>
-                                    <th class="p-3">WhatsApp</th>
-                                    <th class="p-3">Divisi</th>
-                                    <th class="p-3">Status</th>
+                                    <th class="p-2.5 sm:p-3">Nama</th>
+                                    <th class="p-2.5 sm:p-3">RT/RW</th>
+                                    <th class="p-2.5 sm:p-3">WhatsApp</th>
+                                    <th class="p-2.5 sm:p-3">Divisi</th>
+                                    <th class="p-2.5 sm:p-3">Status</th>
                                 </tr>
                             </thead>
                             <tbody id="tabelPendaftar" class="divide-y divide-gray-100 text-gray-700">
@@ -745,17 +744,17 @@
     </section>
 
     <!-- BANNER COLABORASI -->
-    <section class="py-12 px-6">
-        <div class="max-w-4xl mx-auto bg-red-600 rounded-2xl p-8 md:p-10 text-center text-white shadow-xl">
-            <h2 class="text-xl md:text-2xl font-extrabold mb-2">Ingin Berkolaborasi?</h2>
-            <p class="text-red-100 text-xs md:text-sm max-w-lg mx-auto mb-6 font-normal">
+    <section class="py-10 sm:py-12 px-4 sm:px-6">
+        <div class="max-w-4xl mx-auto bg-red-600 rounded-2xl p-6 sm:p-10 text-center text-white shadow-xl">
+            <h2 class="text-lg sm:text-2xl font-extrabold mb-2">Ingin Berkolaborasi?</h2>
+            <p class="text-red-100 text-xs md:text-sm max-w-lg mx-auto mb-5 sm:mb-6 font-normal">
                 Hubungi pengurus Karang Taruna RW 005 di sekretariat atau kunjungi kami di acara acara rutin.
             </p>
-            <div class="flex flex-wrap justify-center gap-3">
-                <a href="#pendaftaran" class="bg-white text-red-600 hover:bg-red-50 font-bold text-xs px-6 py-3 rounded-full shadow-md transition">
+            <div class="flex flex-wrap justify-center gap-2.5 sm:gap-3">
+                <a href="#pendaftaran" class="bg-white text-red-600 hover:bg-red-50 font-bold text-[11px] sm:text-xs px-4 py-2.5 sm:px-6 sm:py-3 rounded-full shadow-md transition">
                     PELAJARI LEBIH LANJUT
                 </a>
-                <a href="#berita" class="border border-white hover:bg-white/10 text-white font-semibold text-xs px-6 py-3 rounded-full transition">
+                <a href="#berita" class="border border-white hover:bg-white/10 text-white font-semibold text-[11px] sm:text-xs px-4 py-2.5 sm:px-6 sm:py-3 rounded-full transition">
                     BACA BERITA
                 </a>
             </div>
@@ -763,14 +762,14 @@
     </section>
 
     <!-- FOOTER -->
-    <footer id="kontak" class="bg-white border-t border-gray-100 pt-12 pb-8 px-6">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+    <footer id="kontak" class="bg-white border-t border-gray-100 pt-10 sm:pt-12 pb-8 px-4 sm:px-6">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-8">
             <div>
                 <div class="flex items-center space-x-3 mb-3">
-                    <div class="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center text-white font-bold text-xs shadow-sm">
+                    <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-red-600 flex items-center justify-center text-white font-bold text-xs shadow-sm shrink-0">
                         <i class="fa-solid fa-flag"></i>
                     </div>
-                    <span class="font-bold text-gray-900 text-sm">Karang Taruna RW 005</span>
+                    <span class="font-bold text-gray-900 text-xs sm:text-sm">Karang Taruna RW 005</span>
                 </div>
                 <p class="text-gray-500 text-xs leading-relaxed">
                     Wadah pemuda-pemudi RW 005 untuk berkarya, berinovasi, dan menjaga semangat gotong royong sejak berdirinya.
@@ -808,7 +807,7 @@
             </div>
         </div>
 
-        <div class="max-w-6xl mx-auto border-t border-gray-100 pt-6 text-center text-[11px] text-gray-400">
+        <div class="max-w-6xl mx-auto border-t border-gray-100 pt-6 text-center text-[10px] sm:text-[11px] text-gray-400">
             <p>© 2026 Karang Taruna RW 005 Lenteng Agung.</p>
         </div>
     </footer>
@@ -835,11 +834,11 @@
             const tr = document.createElement('tr');
             tr.className = "hover:bg-red-50/50 transition border-b border-gray-100";
             tr.innerHTML = `
-                <td class="p-3 font-semibold">${nama}</td>
-                <td class="p-3">${rtRw}</td>
-                <td class="p-3">${telepon}</td>
-                <td class="p-3"><span class="bg-gray-100 px-2 py-0.5 rounded text-[10px] font-medium">${divisi}</span></td>
-                <td class="p-3"><span class="bg-emerald-100 text-emerald-700 font-bold px-2 py-0.5 rounded-full text-[10px]">Tersimpan</span></td>
+                <td class="p-2.5 sm:p-3 font-semibold">${nama}</td>
+                <td class="p-2.5 sm:p-3">${rtRw}</td>
+                <td class="p-2.5 sm:p-3">${telepon}</td>
+                <td class="p-2.5 sm:p-3"><span class="bg-gray-100 px-2 py-0.5 rounded text-[10px] font-medium">${divisi}</span></td>
+                <td class="p-2.5 sm:p-3"><span class="bg-emerald-100 text-emerald-700 font-bold px-2 py-0.5 rounded-full text-[10px]">Tersimpan</span></td>
             `;
 
             tabel.appendChild(tr);
