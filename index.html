@@ -59,6 +59,22 @@
         .cinema-dimmed {
             background-color: rgba(5, 5, 10, 0.95) !important;
         }
+
+        /* Custom Scrollbar untuk Playlist Teater */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(38, 38, 38, 0.5);
+            border-radius: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #d97706;
+            border-radius: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b;
+        }
     </style>
 </head>
 <body class="bg-white text-slate-800 antialiased selection:bg-red-500 selection:text-white relative overflow-x-hidden">
@@ -76,27 +92,44 @@
                 <a href="#beranda" class="text-red-600 font-semibold border-b-2 border-red-600 pb-1">Beranda</a>
                 <a href="#tentang" class="hover:text-red-600 transition">Tentang</a>
                 <a href="#tim" class="hover:text-red-600 transition">Tim</a>
+                <a href="#agenda" class="hover:text-red-600 transition">Agenda</a>
                 <a href="#teater" class="hover:text-red-600 transition flex items-center gap-1"><i class="fa-solid fa-film text-xs text-red-600"></i> Teater</a>
                 <a href="#galeri" class="hover:text-red-600 transition">Galeri</a>
+                <a href="#sosmed" class="hover:text-red-600 transition">Sosial Media</a>
                 <a href="#berita" class="hover:text-red-600 transition">Berita</a>
             </div>
-            <a href="#pendaftaran" class="bg-red-600 hover:bg-red-700 text-white font-medium text-xs sm:text-sm px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-full shadow-md transition duration-300 flex items-center gap-1.5 sm:gap-2 shrink-0">
-                <i class="fa-solid fa-user-plus text-[10px] sm:text-xs"></i> Daftar
-            </a>
+            <div class="flex items-center gap-2">
+                <a href="#pendaftaran" class="bg-red-600 hover:bg-red-700 text-white font-medium text-xs sm:text-sm px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-full shadow-md transition duration-300 flex items-center gap-1.5 sm:gap-2 shrink-0">
+                    <i class="fa-solid fa-user-plus text-[10px] sm:text-xs"></i> Daftar
+                </a>
+                <!-- Hamburger Button (Mobile Menu) -->
+                <button id="btnMobileMenu" class="md:hidden text-gray-700 p-2 rounded-lg hover:bg-gray-100 focus:outline-none">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-gray-100 px-4 py-3 space-y-2 text-sm font-semibold text-gray-600 shadow-lg">
+            <a href="#beranda" class="block py-1.5 hover:text-red-600">Beranda</a>
+            <a href="#tentang" class="block py-1.5 hover:text-red-600">Tentang Kami</a>
+            <a href="#tim" class="block py-1.5 hover:text-red-600">Tim Organisasi</a>
+            <a href="#agenda" class="block py-1.5 hover:text-red-600">Agenda Kegiatan</a>
+            <a href="#teater" class="block py-1.5 hover:text-red-600">Teater Video</a>
+            <a href="#galeri" class="block py-1.5 hover:text-red-600">Galeri</a>
+            <a href="#sosmed" class="block py-1.5 hover:text-red-600">Sosial Media</a>
+            <a href="#berita" class="block py-1.5 hover:text-red-600">Berita</a>
         </div>
     </nav>
 
-    <!-- HERO SECTION (MODERN 3D GLASSMORPHISM DESIGN) -->
+    <!-- HERO SECTION -->
     <section id="beranda" class="relative bg-slate-950 text-white pt-8 sm:pt-14 pb-20 sm:pb-28 overflow-hidden">
-        <!-- 3D Ambient Light Background Blobs -->
         <div class="absolute top-1/4 -left-20 w-72 h-72 sm:w-96 sm:h-96 bg-red-600/30 rounded-full blur-[100px] pointer-events-none"></div>
         <div class="absolute bottom-10 right-10 w-80 h-80 sm:w-[500px] sm:h-[500px] bg-red-800/20 rounded-full blur-[120px] pointer-events-none"></div>
         <div class="absolute top-10 right-1/3 w-64 h-64 bg-amber-500/15 rounded-full blur-[90px] pointer-events-none"></div>
 
         <div class="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-12 gap-4 sm:gap-8 items-center relative z-10">
-            <!-- Kolom Teks (Kiri - Span 7) -->
-            <div class="col-span-7">
-                <!-- 3D Badge Status -->
+            <div class="col-span-12 md:col-span-7">
                 <div class="inline-flex items-center gap-2 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[9px] sm:text-xs font-semibold uppercase mb-3 sm:mb-6 shadow-[0_4px_15px_rgba(239,68,68,0.2)]">
                     <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
                     <span class="bg-gradient-to-r from-white to-red-200 bg-clip-text text-transparent">SELAMAT DATANG DI WEBSITE KARANG TARUNA</span>
@@ -114,34 +147,26 @@
                 </p>
 
                 <div class="flex flex-wrap items-center gap-2.5 sm:gap-4">
-                    <!-- 3D Raised Button Primary -->
                     <a href="#pendaftaran" class="relative group inline-flex items-center gap-2 px-4 py-2 sm:px-7 sm:py-3.5 rounded-2xl bg-gradient-to-r from-red-600 to-red-700 text-white text-[10px] sm:text-xs md:text-sm font-bold shadow-[0_10px_25px_rgba(220,38,38,0.4)] border-t border-red-400/50 hover:shadow-[0_15px_30px_rgba(220,38,38,0.6)] hover:-translate-y-1 active:translate-y-0 transition-all duration-300">
                         <span>GABUNG SEKARANG</span>
                         <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
                     </a>
 
-                    <!-- 3D Glass Button Secondary -->
                     <a href="#kontak" class="inline-flex items-center gap-2 px-4 py-2 sm:px-7 sm:py-3.5 rounded-2xl bg-white/5 hover:bg-white/10 backdrop-blur-md text-white text-[10px] sm:text-xs md:text-sm font-semibold border border-white/15 shadow-lg hover:-translate-y-1 active:translate-y-0 transition-all duration-300">
                         HUBUNGI KAMI
                     </a>
                 </div>
             </div>
 
-            <!-- LOGO / KARTU HUT RI 3D FLOATING (Kanan - Span 5) -->
-            <div class="col-span-5 flex justify-center items-center py-2 sm:py-6 relative perspective-1000">
-                <!-- Decorative 3D Light Ring Behind Card -->
+            <div class="col-span-12 md:col-span-5 flex justify-center items-center py-2 sm:py-6 relative perspective-1000 mt-6 md:mt-0">
                 <div class="absolute w-40 h-40 sm:w-72 sm:h-72 bg-gradient-to-tr from-red-600 to-amber-500 rounded-full blur-2xl opacity-40 animate-pulse"></div>
 
-                <!-- 3D Floating Glass Card -->
                 <div class="relative w-full max-w-xs bg-gradient-to-b from-white/20 via-white/10 to-white/5 backdrop-blur-xl rounded-3xl p-4 sm:p-8 border border-white/25 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transform hover:rotate-2 hover:scale-[1.02] transition-all duration-500 group">
-                    
-                    <!-- Inner 3D Embossed Container -->
                     <div class="relative z-10 text-center">
                         <div class="inline-block px-3 py-1 rounded-full bg-red-600/80 border border-red-400/30 text-[9px] sm:text-xs font-bold uppercase tracking-widest text-amber-200 mb-1 sm:mb-2 shadow-inner">
                             Nusantara Baru
                         </div>
 
-                        <!-- 3D Text Number -->
                         <div class="relative my-1 sm:my-2">
                             <span class="text-4xl sm:text-7xl font-black tracking-tighter bg-gradient-to-b from-white via-slate-100 to-slate-400 bg-clip-text text-transparent drop-shadow-[0_8px_10px_rgba(0,0,0,0.8)]">
                                 81
@@ -155,14 +180,11 @@
 
                         <p class="text-[8px] sm:text-[11px] text-slate-300 font-medium">HUT Republik Indonesia 2026</p>
                     </div>
-
-                    <!-- Glass Reflect Effect Overlay -->
                     <div class="absolute inset-0 rounded-3xl bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
                 </div>
             </div>
         </div>
 
-        <!-- GELOMBANG PUTIH DI BAWAH HERO -->
         <div class="absolute inset-x-0 bottom-0 pointer-events-none">
             <svg class="w-full h-8 sm:h-12 md:h-16 text-white fill-current" viewBox="0 0 1440 70" preserveAspectRatio="none">
                 <path d="M0,32L120,42.7C240,53,480,75,720,64C960,53,1200,11,1320,0L1440,0L1440,70L1320,70C480,70,240,70,720,70C480,70,240,70,120,70L0,70Z"></path>
@@ -218,16 +240,12 @@
     <!-- VISI & MISI SECTION -->
     <section id="visi-misi" class="py-12 sm:py-16 px-4 sm:px-6 bg-gray-50/70">
       <div class="max-w-5xl mx-auto">
-        <!-- Header Section -->
         <div class="text-center mb-8 sm:mb-10">
           <span class="text-[10px] sm:text-xs font-bold tracking-widest text-red-600 uppercase bg-red-100 px-3 py-1 rounded-full">About Us</span>
           <h2 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-gray-900 mt-3">Visi & Misi</h2>
         </div>
 
-        <!-- Container Grid 2 Kolom -->
         <div class="grid md:grid-cols-2 gap-4 sm:gap-6">
-          
-          <!-- Box Visi -->
           <div class="bg-white p-6 sm:p-8 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-center">
             <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 flex items-center gap-2">
               <span class="w-2 h-5 sm:h-6 bg-red-600 rounded-full"></span>
@@ -238,7 +256,6 @@
             </p>
           </div>
 
-          <!-- Box Misi -->
           <div class="bg-white p-6 sm:p-8 rounded-2xl border border-gray-100 shadow-sm">
             <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4 flex items-center gap-2">
               <span class="w-2 h-5 sm:h-6 bg-red-600 rounded-full"></span>
@@ -259,7 +276,6 @@
               </li>
             </ul>
           </div>
-
         </div>
       </div>
     </section>
@@ -274,7 +290,7 @@
             </div>
 
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
-                <!-- ANGGOTA 1 -->
+                <!-- ANGGOTA TIM -->
                 <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
                     <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="annas tasya hartini.jpeg" alt="Annas tasya hartini" class="w-full h-full object-cover img-hover-zoom">
@@ -282,7 +298,6 @@
                     <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Annas tasya hartini</h4>
                 </div>
                 
-                <!-- ANGGOTA 2 -->
                 <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
                     <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="Arsya Afnandya Alfawas.jpeg" alt="Arsya Afnandya Alfawas" class="w-full h-full object-cover img-hover-zoom">
@@ -290,7 +305,6 @@
                     <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Arsya Afnandya Alfawas</h4>
                 </div>
 
-                <!-- ANGGOTA 3 -->
                 <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
                     <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="Daffa Raihan Ghifari.jpeg" alt="Daffa Raihan Ghifari" class="w-full h-full object-cover img-hover-zoom">
@@ -298,7 +312,6 @@
                     <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Daffa Raihan Ghifari</h4>
                 </div>
 
-                <!-- ANGGOTA 4 -->
                 <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
                     <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="Joshua Christyan Prakoso bang.jpeg" alt="Joshua Christyan Prakoso" class="w-full h-full object-cover img-hover-zoom">
@@ -306,7 +319,6 @@
                     <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Joshua Christyan Prakoso</h4>
                 </div>
 
-                <!-- ANGGOTA 5 -->
                 <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
                     <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="Kayla Rubby Denisya.jpeg" alt="Kayla Rubby Denisya" class="w-full h-full object-cover img-hover-zoom">
@@ -314,7 +326,6 @@
                     <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Kayla Rubby Denisya</h4>
                 </div>
 
-                <!-- ANGGOTA 6 -->
                 <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
                     <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="Bagas Satya.jpeg" alt="Bagas Satya" class="w-full h-full object-cover img-hover-zoom">
@@ -322,7 +333,6 @@
                     <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Bagas Satya</h4>
                 </div>
 
-                <!-- ANGGOTA 7 -->
                 <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
                     <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="Nayla Putri Adilla.jpeg" alt="Nayla Putri Adilla" class="w-full h-full object-cover img-hover-zoom">
@@ -330,7 +340,6 @@
                     <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Nayla Putri Adilla</h4>
                 </div>
 
-                <!-- ANGGOTA 8 -->
                 <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
                     <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="rizki.jpeg" alt="Rizki" class="w-full h-full object-cover img-hover-zoom">
@@ -338,7 +347,6 @@
                     <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Rizki</h4>
                 </div>
 
-                <!-- ANGGOTA 9 -->
                 <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
                     <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="Srikandi ayu wandira.jpeg" alt="Srikandi ayu wandira" class="w-full h-full object-cover img-hover-zoom">
@@ -346,7 +354,6 @@
                     <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Srikandi ayu wandira</h4>
                 </div>
 
-                <!-- ANGGOTA 10 -->
                 <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
                     <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="REZA ANANDA PUTRA.jpeg" alt="Reza Ananda Putra" class="w-full h-full object-cover img-hover-zoom">
@@ -354,7 +361,6 @@
                     <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Reza Ananda Putra</h4>
                 </div>
 
-                <!-- ANGGOTA 11 -->
                 <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
                     <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="Muhammad Tamiul.jpeg" alt="Muhammad Tamiul" class="w-full h-full object-cover img-hover-zoom">
@@ -362,7 +368,34 @@
                     <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Muhammad Tamiul</h4>
                 </div>
 
-                <!-- ANGGOTA 12 -->
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
+                    <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
+                        <img src="Ridho Abdullah.jpeg" alt="Ridho Abdullah" class="w-full h-full object-cover img-hover-zoom">
+                    </div>
+                    <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Ridho Abdullah</h4>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
+                    <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
+                        <img src="Syahrul sabani.jpeg" alt="Syahrul sabani" class="w-full h-full object-cover img-hover-zoom">
+                    </div>
+                    <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Syahrul sabani</h4>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
+                    <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
+                        <img src="Halimah.jpeg" alt="Halimah" class="w-full h-full object-cover img-hover-zoom">
+                    </div>
+                    <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Halimah</h4>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
+                    <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
+                        <img src="Catur Muhammad Saputra.jpeg" alt="Catur Muhammad Saputra" class="w-full h-full object-cover img-hover-zoom">
+                    </div>
+                    <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Catur Muhammad Saputra</h4>
+                </div>
+
                 <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
                     <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="Fahmi.jpeg" alt="Fahmi" class="w-full h-full object-cover img-hover-zoom">
@@ -370,7 +403,6 @@
                     <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Fahmi</h4>
                 </div>
 
-                <!-- ANGGOTA 13 -->
                 <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
                     <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="Irfansyah Ariyanto Pragaman.jpeg" alt="Irfansyah Ariyanto Pragaman" class="w-full h-full object-cover img-hover-zoom">
@@ -378,7 +410,6 @@
                     <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Irfansyah Ariyanto Pragaman</h4>
                 </div>
 
-                <!-- ANGGOTA 14 -->
                 <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
                     <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="Isnandar.jpeg" alt="Isnandar" class="w-full h-full object-cover img-hover-zoom">
@@ -386,7 +417,6 @@
                     <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Isnandar</h4>
                 </div>
 
-                <!-- ANGGOTA 15 -->
                 <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
                     <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="Jihan nabilah.jpeg" alt="Jihan Nabilah" class="w-full h-full object-cover img-hover-zoom">
@@ -394,7 +424,6 @@
                     <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Jihan Nabilah</h4>
                 </div>
 
-                <!-- ANGGOTA 16 -->
                 <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
                     <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="Raissa Dwi Rahmah.jpeg" alt="Raissa Dwi Rahmah" class="w-full h-full object-cover img-hover-zoom">
@@ -402,7 +431,6 @@
                     <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Raissa Dwi Rahmah</h4>
                 </div>
 
-                <!-- ANGGOTA 17 -->
                 <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
                     <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="iqbal hazimul fikri.jpeg" alt="Iqbal Hazimul Fikri" class="w-full h-full object-cover img-hover-zoom">
@@ -410,7 +438,6 @@
                     <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Iqbal Hazimul Fikri</h4>
                 </div>
 
-                <!-- ANGGOTA 18 -->
                 <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
                     <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="Subkhan Hasbi Anwar L.jpeg" alt="Subkhan Hasbi Anwar L" class="w-full h-full object-cover img-hover-zoom">
@@ -418,7 +445,6 @@
                     <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Subkhan Hasbi Anwar L</h4>
                 </div>
 
-                <!-- ANGGOTA 19 -->
                 <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
                     <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="Thamiafifah Sayyidahutami.jpeg" alt="Thamiafifah Sayyidahutami" class="w-full h-full object-cover img-hover-zoom">
@@ -426,7 +452,6 @@
                     <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Thamiafifah Sayyidahutami</h4>
                 </div>
 
-                <!-- ANGGOTA 20 -->
                 <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
                     <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="faadiyah yasmin.jpeg" alt="Faadiyah Yasmin" class="w-full h-full object-cover img-hover-zoom">
@@ -434,7 +459,6 @@
                     <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Faadiyah Yasmin</h4>
                 </div>
 
-                <!-- ANGGOTA 21 -->
                 <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
                     <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="aulia aizhimaharani.jpeg" alt="Aulia Aizhimaharani" class="w-full h-full object-cover img-hover-zoom">
@@ -442,7 +466,6 @@
                     <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Aulia Aizhimaharani</h4>
                 </div>
 
-                <!-- ANGGOTA 22 -->
                 <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
                     <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="lukman.jpeg" alt="Lukman" class="w-full h-full object-cover img-hover-zoom">
@@ -464,7 +487,6 @@
                     <h4 class="font-bold text-gray-900 text-[11px] sm:text-xs md:text-sm group-hover:text-red-600 transition">Mohamad Farhan</h4>
                 </div>
 
-                <!-- ANGGOTA 23 -->
                 <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm text-center p-2.5 sm:p-3 group">
                     <div class="aspect-square rounded-xl bg-gray-100 mb-2 sm:mb-3 overflow-hidden">
                         <img src="Hildan Luth Nurdhonis.jpeg" alt="Hildan Luth Nurdhonis" class="w-full h-full object-cover img-hover-zoom">
@@ -475,14 +497,51 @@
         </div>
     </section>
 
-    <!-- SECTION TEATER MINI & DOKUMENTASI VIDEO -->
+    <!-- AGENDA KEGIATAN MENDATANG SECTION -->
+    <section id="agenda" class="py-12 sm:py-16 bg-gray-50/70 px-4 sm:px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-8 sm:mb-12">
+                <span class="text-[10px] sm:text-xs font-bold tracking-widest text-red-600 uppercase bg-red-100 px-3 py-1 rounded-full">JADWAL AKSI</span>
+                <h2 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-gray-900 mt-3">Agenda & Kegiatan Terdekat</h2>
+                <p class="text-gray-500 text-xs md:text-sm mt-1">Ikuti dan berpartisipasi dalam setiap kegiatan pemuda RW 005.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm relative overflow-hidden">
+                    <div class="w-2 h-full bg-red-600 absolute left-0 top-0"></div>
+                    <span class="text-[10px] font-bold text-red-600 bg-red-50 px-2.5 py-1 rounded-full uppercase">Rutin Bulanan</span>
+                    <h3 class="font-bold text-gray-900 text-sm mt-3 mb-1">Rapat Evaluasi & Kerja Bakti</h3>
+                    <p class="text-xs text-gray-500 mb-3"><i class="fa-regular fa-calendar mr-1 text-red-600"></i> Minggu Pertama</p>
+                    <p class="text-xs text-gray-600 leading-relaxed">Kerja bakti pembersihan lingkungan RT di wilayah RW 005 dilanjutkan konsolidasi pengurus.</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm relative overflow-hidden">
+                    <div class="w-2 h-full bg-amber-500 absolute left-0 top-0"></div>
+                    <span class="text-[10px] font-bold text-amber-600 bg-amber-50 px-2.5 py-1 rounded-full uppercase">Kesehatan</span>
+                    <h3 class="font-bold text-gray-900 text-sm mt-3 mb-1">Cek Kesehatan & Donor Darah</h3>
+                    <p class="text-xs text-gray-500 mb-3"><i class="fa-regular fa-calendar mr-1 text-amber-600"></i> Agenda Triwulan</p>
+                    <p class="text-xs text-gray-600 leading-relaxed">Pelayanan kesehatan gratis dan bakti sosial donor darah bekerjasama dengan puskesmas lokal.</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm relative overflow-hidden">
+                    <div class="w-2 h-full bg-emerald-600 absolute left-0 top-0"></div>
+                    <span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full uppercase">Kepemudaan</span>
+                    <h3 class="font-bold text-gray-900 text-sm mt-3 mb-1">Turnamen Olahraga & Seni</h3>
+                    <p class="text-xs text-gray-500 mb-3"><i class="fa-regular fa-calendar mr-1 text-emerald-600"></i> Menjelang Agustus 2026</p>
+                    <p class="text-xs text-gray-600 leading-relaxed">Rangkaian perlombaan olahraga dan persiapan Malam Puncak HUT RI ke-81.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION TEATER MINI & DOKUMENTASI VIDEO (DIPERBAIKI DENGAN LAYOUT DUA KOLOM DAN PLAYLIST BISA DI-SCROLL) -->
     <section id="teater" class="py-12 sm:py-16 px-4 sm:px-6 md:px-8 bg-slate-950 text-white relative overflow-hidden transition-all duration-500 cinema-overlay-dim">
         
         <!-- Background Lighting & Atmosphere -->
         <div class="absolute inset-0 spotlight-beam opacity-80"></div>
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-48 bg-amber-500/10 blur-3xl pointer-events-none rounded-full"></div>
 
-        <div class="max-w-5xl mx-auto relative z-10">
+        <div class="max-w-6xl mx-auto relative z-10">
             
             <!-- Header Teater -->
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-6 sm:mb-8 gap-4 border-b border-amber-500/20 pb-4 sm:pb-6">
@@ -502,173 +561,194 @@
                 </button>
             </div>
 
-            <!-- FRAME STAGE TEATER UTAMA -->
-            <div class="relative bg-neutral-900 rounded-2xl sm:rounded-3xl p-2.5 sm:p-6 border border-amber-600/40 sm:border-2 cinema-screen-shadow overflow-hidden">
+            <!-- GRID STAGE UTAMA (2 KOLOM: LAYAR LAYAR TANCAP + PLAYLIST VIDEO) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
                 
-                <!-- Marquee Board Header Top -->
-                <div class="theatre-valance rounded-t-xl py-2 sm:py-3 px-3 sm:px-4 border-b border-amber-500/50 sm:border-b-2 flex justify-between items-center relative z-20">
-                    <!-- Marquee Lights Left -->
-                    <div class="flex space-x-1.5 sm:space-x-2">
-                        <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-amber-300 rounded-full marquee-bulb"></span>
-                        <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-amber-300 rounded-full marquee-bulb"></span>
-                        <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-amber-300 rounded-full marquee-bulb"></span>
-                    </div>
-
-                    <div class="text-center px-2">
-                        <span class="text-amber-200 font-cinema text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-widest block drop-shadow">NOW SHOWING</span>
-                        <h3 class="text-white font-extrabold text-xs sm:text-sm md:text-lg tracking-wider text-amber-400 line-clamp-1">DOKUMENTASI AFTER MOVIE RW 005</h3>
-                    </div>
-
-                    <!-- Marquee Lights Right -->
-                    <div class="flex space-x-1.5 sm:space-x-2">
-                        <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-amber-300 rounded-full marquee-bulb"></span>
-                        <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-amber-300 rounded-full marquee-bulb"></span>
-                        <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-amber-300 rounded-full marquee-bulb"></span>
-                    </div>
-                </div>
-
-                <!-- CONTAINER LAYAR & TIRAI TEATER -->
-                <div class="relative flex items-center justify-center bg-black rounded-b-xl overflow-hidden aspect-video border border-neutral-800">
+                <!-- KOLOM KIRI: PEMUTAR VIDEO (SPAN 8) -->
+                <div class="lg:col-span-8 bg-neutral-900 rounded-2xl sm:rounded-3xl p-2.5 sm:p-5 border border-amber-600/40 sm:border-2 cinema-screen-shadow overflow-hidden">
                     
-                    <!-- Tirai Teater Kiri -->
-                    <div class="absolute top-0 bottom-0 left-0 w-5 sm:w-8 md:w-16 theatre-curtain-left z-20 pointer-events-none flex flex-col justify-between py-4 items-end">
-                        <div class="w-0.5 sm:w-1 md:w-2 h-full bg-black/30"></div>
+                    <!-- Marquee Board Header Top -->
+                    <div class="theatre-valance rounded-t-xl py-2 sm:py-3 px-3 sm:px-4 border-b border-amber-500/50 flex justify-between items-center relative z-20 mb-1">
+                        <!-- Marquee Lights Left -->
+                        <div class="flex space-x-1.5 sm:space-x-2">
+                            <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-amber-300 rounded-full marquee-bulb"></span>
+                            <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-amber-300 rounded-full marquee-bulb"></span>
+                            <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-amber-300 rounded-full marquee-bulb"></span>
+                        </div>
+
+                        <div class="text-center px-2">
+                            <span class="text-amber-200 font-cinema text-[10px] sm:text-xs font-bold uppercase tracking-widest block drop-shadow">NOW SHOWING</span>
+                            <h3 id="videoTitleDisplay" class="text-white font-extrabold text-xs sm:text-sm md:text-base tracking-wider text-amber-400 line-clamp-1">DOKUMENTASI AFTER MOVIE RW 005</h3>
+                        </div>
+
+                        <!-- Marquee Lights Right -->
+                        <div class="flex space-x-1.5 sm:space-x-2">
+                            <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-amber-300 rounded-full marquee-bulb"></span>
+                            <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-amber-300 rounded-full marquee-bulb"></span>
+                            <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-amber-300 rounded-full marquee-bulb"></span>
+                        </div>
                     </div>
 
-                    <!-- Layar Pemutar Video HTML5 -->
-                    <div class="w-full h-full relative z-10 flex items-center justify-center bg-neutral-950">
-                        <video id="theaterVideo" class="w-full h-full object-cover" controls poster="malem puncak 3.jpeg">
-                            <source src="after movie malam puncak 2026.mp4" type="video/mp4">
-                            Browser Anda tidak mendukung pemutaran video HTML5.
-                        </video>
+                    <!-- CONTAINER LAYAR & TIRAI TEATER -->
+                    <div class="relative flex items-center justify-center bg-black rounded-b-xl overflow-hidden aspect-video border border-neutral-800">
+                        <!-- Tirai Teater Kiri -->
+                        <div class="absolute top-0 bottom-0 left-0 w-4 sm:w-6 md:w-10 theatre-curtain-left z-20 pointer-events-none flex flex-col justify-between py-4 items-end">
+                            <div class="w-0.5 sm:w-1 h-full bg-black/30"></div>
+                        </div>
+
+                        <!-- Layar Pemutar Video HTML5 -->
+                        <div class="w-full h-full relative z-10 flex items-center justify-center bg-neutral-950">
+                            <video id="theaterVideo" class="w-full h-full object-cover" controls poster="malem puncak 3.jpeg">
+                                <source id="videoSource" src="vidio.mp4" type="video/mp4">
+                                Browser Anda tidak mendukung pemutaran video HTML5.
+                            </video>
+                        </div>
+
+                        <!-- Tirai Teater Kanan -->
+                        <div class="absolute top-0 bottom-0 right-0 w-4 sm:w-6 md:w-10 theatre-curtain-right z-20 pointer-events-none flex flex-col justify-between py-4 items-start">
+                            <div class="w-0.5 sm:w-1 h-full bg-black/30"></div>
+                        </div>
                     </div>
 
-                    <!-- Tirai Teater Kanan -->
-                    <div class="absolute top-0 bottom-0 right-0 w-5 sm:w-8 md:w-16 theatre-curtain-right z-20 pointer-events-none flex flex-col justify-between py-4 items-start">
-                        <div class="w-0.5 sm:w-1 md:w-2 h-full bg-black/30"></div>
-                    </div>
+                    <!-- FOOTER STAGE & KONTROL / DEKORASI PROYEKTOR -->
+                    <div class="mt-3 pt-2.5 border-t border-neutral-800 flex flex-wrap items-center justify-between gap-2 text-xs text-neutral-400">
+                        <div class="flex items-center gap-2">
+                            <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-red-900/60 text-red-300 font-mono text-[10px] border border-red-700/50">
+                                <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping"></span> CINEMA HD
+                            </span>
+                            <span class="text-[11px]"><i class="fa-solid fa-video text-amber-500 mr-1"></i> Proyektor Kartar</span>
+                        </div>
 
+                        <!-- TIKET BIOSKOP DEKORATIF -->
+                        <div class="bg-gradient-to-r from-amber-600 to-amber-700 text-slate-950 font-mono font-bold px-3 py-1 rounded-lg shadow flex items-center gap-2 border border-amber-400/50 text-[10px] sm:text-[11px]">
+                            <i class="fa-solid fa-ticket text-xs"></i>
+                            <span class="tracking-widest">KARTAR-005</span>
+                            <span class="text-[8px] bg-slate-950 text-amber-400 px-1 py-0.2 rounded">VIP</span>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- FOOTER STAGE & KONTROL / DEKORASI PROYEKTOR -->
-                <div class="mt-3 sm:mt-4 pt-2.5 sm:pt-3 border-t border-neutral-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-neutral-400">
-                    <div class="flex items-center gap-3">
-                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-red-900/60 text-red-300 font-mono text-[10px] sm:text-[11px] border border-red-700/50">
-                            <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span> CINEMA HD
+                <!-- KOLOM KANAN: DAFTAR PLAYLIST VIDEO (SPAN 4 - SCROLLABLE) -->
+                <div class="lg:col-span-4 bg-neutral-900/90 rounded-2xl p-4 border border-amber-500/30 flex flex-col h-full">
+                    <div class="flex items-center justify-between border-b border-neutral-800 pb-3 mb-3">
+                        <h3 class="font-extrabold text-amber-300 text-sm flex items-center gap-2">
+                            <i class="fa-solid fa-list-ul text-amber-500"></i> PLAYLIST DOKUMENTASI
+                        </h3>
+                        <span id="playlistCount" class="text-[10px] bg-amber-500/20 text-amber-400 px-2 py-0.5 rounded-full border border-amber-500/30 font-bold">
+                            2 Video
                         </span>
-                        <span class="text-[11px] sm:text-xs"><i class="fa-solid fa-video text-amber-500 mr-1"></i> Proyektor Karang Taruna RW 005</span>
                     </div>
 
-                    <!-- TIKET BIOSKOP DEKORATIF -->
-                    <div class="bg-gradient-to-r from-amber-600 to-amber-700 text-slate-950 font-mono font-bold px-3 py-1 sm:px-4 sm:py-1.5 rounded-lg shadow flex items-center gap-2 sm:gap-3 border border-amber-400/50 text-[11px] sm:text-xs">
-                        <i class="fa-solid fa-ticket text-xs sm:text-sm"></i>
-                        <span class="tracking-widest">TICKET: KARTAR-005</span>
-                        <span class="text-[9px] sm:text-[10px] bg-slate-950 text-amber-400 px-1.5 py-0.5 rounded">VIP</span>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- DEKORASI PLAYLIST TEATER -->
-            <div class="mt-6 sm:mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
-                <div class="bg-neutral-900/80 rounded-xl p-3 border border-neutral-800 hover:border-amber-500/50 transition flex items-center gap-3 group cursor-pointer">
-                    <div class="w-16 h-12 bg-neutral-800 rounded-lg overflow-hidden shrink-0 relative">
-                        <img src="" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
-                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
-                            <i class="fa-solid fa-play text-xs text-amber-400"></i>
+                    <!-- DAFTAR VIDEO (SCROLLABLE CONTAINER) -->
+                    <div class="space-y-2.5 overflow-y-auto max-h-[380px] lg:max-h-[420px] pr-1.5 custom-scrollbar" id="playlistContainer">
+                        
+                        <!-- VIDEO 1 (DEFAULT ACTIVE) -->
+                        <div class="playlist-card active-video bg-amber-500/10 rounded-xl p-2.5 border-2 border-amber-500 hover:border-amber-400 transition flex items-center gap-3 cursor-pointer group relative" 
+                             data-src="vidio.mp4" 
+                             data-poster="malem puncak 3.jpeg" 
+                             data-title="DOKUMENTASI AFTER MOVIE RW 005">
+                            <div class="w-20 h-14 bg-neutral-800 rounded-lg overflow-hidden shrink-0 relative shadow-md">
+                                <img src="malem puncak 3.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                                    <i class="fa-solid fa-play text-xs text-amber-400 group-hover:scale-125 transition-transform"></i>
+                                </div>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <span class="badge-status inline-block text-[9px] font-bold text-amber-400 bg-amber-500/20 px-1.5 py-0.5 rounded mb-1 border border-amber-500/40">Sedang Diputar</span>
+                                <h4 class="font-bold text-xs text-white line-clamp-1 group-hover:text-amber-300 transition">After Movie Malam Puncak 2026</h4>
+                                <p class="text-[10px] text-neutral-400 truncate">Malam Puncak HUT RI</p>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-xs text-slate-200 group-hover:text-amber-400 transition line-clamp-1"></h4>
-                        <p class="text-[10px] text-neutral-500"></p>
+
+                        <!-- VIDEO 2 -->
+                        <div class="playlist-card bg-neutral-800/60 hover:bg-neutral-800 rounded-xl p-2.5 border border-neutral-700 hover:border-amber-500/50 transition flex items-center gap-3 cursor-pointer group relative" 
+                             data-src="vidio2.mp4" 
+                             data-poster="malam puncak rw - Copy.jpeg" 
+                             data-title="PENTAS SENI & KEGIATAN">
+                            <div class="w-20 h-14 bg-neutral-800 rounded-lg overflow-hidden shrink-0 relative shadow-md">
+                                <img src="malam puncak rw - Copy.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                                    <i class="fa-solid fa-play text-xs text-amber-400 group-hover:scale-125 transition-transform"></i>
+                                </div>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <span class="badge-status hidden inline-block text-[9px] font-bold text-amber-400 bg-amber-500/20 px-1.5 py-0.5 rounded mb-1 border border-amber-500/40">Sedang Diputar</span>
+                                <h4 class="font-bold text-xs text-slate-200 line-clamp-1 group-hover:text-amber-300 transition">Pentas Seni & Kebersamaan</h4>
+                                <p class="text-[10px] text-neutral-400 truncate">Dokumentasi Acara</p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
-                <div class="bg-neutral-900/80 rounded-xl p-3 border border-neutral-800 hover:border-amber-500/50 transition flex items-center gap-3 group cursor-pointer">
-                    <div class="w-16 h-12 bg-neutral-800 rounded-lg overflow-hidden shrink-0 relative">
-                        <img src="" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
-                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
-                            <i class="fa-solid fa-play text-xs text-amber-400"></i>
-                        </div>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-xs text-slate-200 group-hover:text-amber-400 transition line-clamp-1"></h4>
-                        <p class="text-[10px] text-neutral-500"></p>
-                    </div>
-                </div>
-
-                <div class="bg-neutral-900/80 rounded-xl p-3 border border-neutral-800 hover:border-amber-500/50 transition flex items-center gap-3 group cursor-pointer">
-                    <div class="w-16 h-12 bg-neutral-800 rounded-lg overflow-hidden shrink-0 relative">
-                        <img src="" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
-                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
-                            <i class="fa-solid fa-play text-xs text-amber-400"></i>
-                        </div>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-xs text-slate-200 group-hover:text-amber-400 transition line-clamp-1"></h4>
-                        <p class="text-[10px] text-neutral-500"></p>
-                    </div>
-                </div>
             </div>
 
         </div>
     </section>
 
-    <!-- GALERI KEGIATAN SECTION -->
+    <!-- GALERI KEGIATAN SECTION (DENGAN FITUR LIGHTBOX) -->
     <section id="galeri" class="py-12 sm:py-16 bg-gray-50/70 px-4 sm:px-6">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-8 sm:mb-12">
                 <span class="text-[10px] sm:text-xs font-bold tracking-widest text-red-600 uppercase bg-red-100 px-3 py-1 rounded-full">DOKUMENTASI</span>
                 <h2 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-gray-900 mt-3">Galeri Kegiatan</h2>
-                <p class="text-gray-500 text-xs md:text-sm mt-1">Momen kebersamaan Karang Taruna RW 005 dalam berbagai kegiatan.</p>
+                <p class="text-gray-500 text-xs md:text-sm mt-1">Momen kebersamaan Karang Taruna RW 005 dalam berbagai kegiatan (Klik foto untuk memperbesar).</p>
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
-                <div class="rounded-2xl overflow-hidden border border-gray-100 shadow-sm aspect-video bg-gray-200">
+                <div class="gallery-item rounded-2xl overflow-hidden border border-gray-100 shadow-sm aspect-video bg-gray-200 cursor-pointer">
                     <img src="malem puncak 2.jpeg" class="w-full h-full object-cover img-hover-zoom">
                 </div>
-                <div class="rounded-2xl overflow-hidden border border-gray-100 shadow-sm aspect-video bg-gray-200">
+                <div class="gallery-item rounded-2xl overflow-hidden border border-gray-100 shadow-sm aspect-video bg-gray-200 cursor-pointer">
                     <img src="malem puncak 3.jpeg" class="w-full h-full object-cover img-hover-zoom">
                 </div>
-                <div class="rounded-2xl overflow-hidden border border-gray-100 shadow-sm aspect-video bg-gray-200">
+                <div class="gallery-item rounded-2xl overflow-hidden border border-gray-100 shadow-sm aspect-video bg-gray-200 cursor-pointer">
                     <img src="malem puncak 4.jpeg" class="w-full h-full object-cover img-hover-zoom">
                 </div>
-                <div class="rounded-2xl overflow-hidden border border-gray-100 shadow-sm aspect-video bg-gray-200">
+                <div class="gallery-item rounded-2xl overflow-hidden border border-gray-100 shadow-sm aspect-video bg-gray-200 cursor-pointer">
                     <img src="malem puncak 5.jpeg" class="w-full h-full object-cover img-hover-zoom">
                 </div>
-                <div class="rounded-2xl overflow-hidden border border-gray-100 shadow-sm aspect-video bg-gray-200">
+                <div class="gallery-item rounded-2xl overflow-hidden border border-gray-100 shadow-sm aspect-video bg-gray-200 cursor-pointer">
                     <img src="malem puncak 6.jpeg" class="w-full h-full object-cover img-hover-zoom">
                 </div>
-                <div class="rounded-2xl overflow-hidden border border-gray-100 shadow-sm aspect-video bg-gray-200">
+                <div class="gallery-item rounded-2xl overflow-hidden border border-gray-100 shadow-sm aspect-video bg-gray-200 cursor-pointer">
                     <img src="malem puncak 7.jpeg" class="w-full h-full object-cover img-hover-zoom">
                 </div>
-                <div class="rounded-2xl overflow-hidden border border-gray-100 shadow-sm aspect-video bg-gray-200">
+                <div class="gallery-item rounded-2xl overflow-hidden border border-gray-100 shadow-sm aspect-video bg-gray-200 cursor-pointer">
                     <img src="dokumen fadiyah 1.jpeg" class="w-full h-full object-cover img-hover-zoom">
                 </div>
-                <div class="rounded-2xl overflow-hidden border border-gray-100 shadow-sm aspect-video bg-gray-200">
+                <div class="gallery-item rounded-2xl overflow-hidden border border-gray-100 shadow-sm aspect-video bg-gray-200 cursor-pointer">
                     <img src="dokumen fadiyah 2.jpeg" class="w-full h-full object-cover img-hover-zoom">
                 </div>
-                <div class="rounded-2xl overflow-hidden border border-gray-100 shadow-sm aspect-video bg-gray-200">
+                <div class="gallery-item rounded-2xl overflow-hidden border border-gray-100 shadow-sm aspect-video bg-gray-200 cursor-pointer">
                     <img src="dokumen fadiyah 3.jpeg" class="w-full h-full object-cover img-hover-zoom">
                 </div>
-                <div class="rounded-2xl overflow-hidden border border-gray-100 shadow-sm aspect-video bg-gray-200">
+                <div class="gallery-item rounded-2xl overflow-hidden border border-gray-100 shadow-sm aspect-video bg-gray-200 cursor-pointer">
                     <img src="dokumen fadiyah 4.jpeg" class="w-full h-full object-cover img-hover-zoom">
                 </div>
-                <div class="rounded-2xl overflow-hidden border border-gray-100 shadow-sm aspect-video bg-gray-200">
+                <div class="gallery-item rounded-2xl overflow-hidden border border-gray-100 shadow-sm aspect-video bg-gray-200 cursor-pointer">
                     <img src="dokumen kesehatan gratis 1.jpeg" class="w-full h-full object-cover img-hover-zoom">
                 </div>
-                <div class="rounded-2xl overflow-hidden border border-gray-100 shadow-sm aspect-video bg-gray-200">
+                <div class="gallery-item rounded-2xl overflow-hidden border border-gray-100 shadow-sm aspect-video bg-gray-200 cursor-pointer">
                     <img src="dokumen kesehatan gratis 2.jpeg" class="w-full h-full object-cover img-hover-zoom">
                 </div>
-                <div class="rounded-2xl overflow-hidden border border-gray-100 shadow-sm aspect-video bg-gray-200">
+                <div class="gallery-item rounded-2xl overflow-hidden border border-gray-100 shadow-sm aspect-video bg-gray-200 cursor-pointer">
                     <img src="dokumen kesehatan gratis 3.jpeg" class="w-full h-full object-cover img-hover-zoom">
                 </div>
-                <div class="rounded-2xl overflow-hidden border border-gray-100 shadow-sm aspect-video bg-gray-200">
+                <div class="gallery-item rounded-2xl overflow-hidden border border-gray-100 shadow-sm aspect-video bg-gray-200 cursor-pointer">
                     <img src="dokumen kesehatan gratis 4.jpeg" class="w-full h-full object-cover img-hover-zoom">
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- LIGHTBOX MODAL POPUP -->
+    <div id="lightboxModal" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center p-4">
+        <button id="closeLightbox" class="absolute top-5 right-5 text-white text-3xl hover:text-red-500 focus:outline-none">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <img id="lightboxImg" src="" class="max-w-full max-h-[85vh] rounded-xl shadow-2xl object-contain">
+    </div>
 
     <!-- BERITA & ARTIKEL SECTION -->
     <section id="berita" class="py-12 sm:py-16 px-4 sm:px-6">
@@ -732,10 +812,12 @@
                         <div>
                             <label class="block text-xs font-semibold text-gray-600 mb-1">Divisi Minat</label>
                             <select name="divisi" id="divisi" class="w-full px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl border border-gray-200 text-xs focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-600 transition bg-white">
-                                <option value="Acara & Keagamaan">Acara & Keagamaan</option>
-                                <option value="Humas & Publikasi">Humas & Publikasi</option>
-                                <option value="Olahraga & Seni">Olahraga & Seni</option>
-                                <option value="Perlengkapan & Logistik">Perlengkapan & Logistik</option>
+                                <option value="Humas">Humas</option>
+                                <option value="Medsos">Medsos</option>
+                                <option value="Lingkungan Hidup & Kerjasama">Lingkungan Hidup & Kerjasama</option>
+                                <option value="Kerohanian">Kerohanian</option>
+                                <option value="Minat Bakat">Minat Bakat</option>
+                                <option value="Kewirausahaan">Kewirausahaan</option>
                             </select>
                         </div>
                         <button type="submit" id="btnSubmit" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold text-xs py-2.5 sm:py-3 rounded-xl shadow-md transition duration-300 flex items-center justify-center gap-2 mt-2">
@@ -772,7 +854,7 @@
                                 </tr>
                             </thead>
                             <tbody id="tabelPendaftar" class="divide-y divide-gray-100 text-gray-700">
-                                <!-- Data akan ditambahkan otomatis di sini melalui JavaScript -->
+                                <!-- Data akan ditambahkan otomatis di sini melalui JavaScript & LocalStorage -->
                             </tbody>
                         </table>
                     </div>
@@ -799,6 +881,63 @@
         </div>
     </section>
 
+    <!-- FITUR BARU: FOLLOW OUR SOCIAL MEDIA SECTION -->
+    <section id="sosmed" class="py-12 sm:py-16 bg-gray-900 text-white px-4 sm:px-6 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-8 sm:mb-12">
+                <span class="text-[10px] sm:text-xs font-bold tracking-widest text-red-400 uppercase bg-red-950/80 px-3 py-1 rounded-full border border-red-800/50">CONNECT WITH US</span>
+                <h2 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-white mt-3">Follow Media Sosial Kami</h2>
+                <p class="text-slate-400 text-xs md:text-sm mt-1">Dapatkan informasi paling update, video kegiatan, dan cuplikan keseruan pemuda RW 005.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
+                <!-- CARD INSTAGRAM -->
+                <div class="bg-slate-800/80 rounded-2xl border border-slate-700/80 overflow-hidden shadow-lg hover:shadow-pink-500/10 hover:border-pink-500/50 transition-all duration-300 group flex flex-col justify-between">
+                    <div class="relative h-44 overflow-hidden">
+                        <img src="instagram kartar.jpeg" alt="Instagram Karang Taruna RW 005" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
+                        <div class="absolute top-3 left-3 bg-gradient-to-r from-purple-600 via-pink-600 to-amber-500 text-white text-[10px] font-bold px-3 py-1 rounded-full flex items-center gap-1.5 shadow-md">
+                            <i class="fa-brands fa-instagram text-xs"></i> INSTAGRAM
+                        </div>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-extrabold text-white text-base sm:text-lg mb-1 group-hover:text-pink-400 transition">@ukkt_005lentengagung</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                                Ikuti postingan foto kegiatan rutin, dokumentasi acara, dan pengumuman resmi Karang Taruna RW 005 di Instagram.
+                            </p>
+                        </div>
+                        <a href="https://www.instagram.com/ukkt_005lentengagung" target="_blank" class="w-full bg-gradient-to-r from-purple-600 via-pink-600 to-amber-500 hover:opacity-90 text-white text-xs font-bold py-2.5 rounded-xl text-center shadow-md transition flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-instagram text-sm"></i> Follow di Instagram
+                        </a>
+                    </div>
+                </div>
+
+                <!-- CARD TIKTOK -->
+                <div class="bg-slate-800/80 rounded-2xl border border-slate-700/80 overflow-hidden shadow-lg hover:shadow-cyan-500/10 hover:border-cyan-500/50 transition-all duration-300 group flex flex-col justify-between">
+                    <div class="relative h-44 overflow-hidden">
+                        <img src="tiktok kartar.jpeg" alt="TikTok Karang Taruna RW 005" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
+                        <div class="absolute top-3 left-3 bg-black text-white text-[10px] font-bold px-3 py-1 rounded-full border border-slate-700 flex items-center gap-1.5 shadow-md">
+                            <i class="fa-brands fa-tiktok text-xs text-cyan-400"></i> TIKTOK
+                        </div>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-extrabold text-white text-base sm:text-lg mb-1 group-hover:text-cyan-400 transition">@karangtarunarw.005</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                                Tonton video pendek kreatif, konten keseruan panitia, behind the scenes, dan keseruan momen pemuda RW 005.
+                            </p>
+                        </div>
+                        <a href="https://www.tiktok.com/@karangtarunarw.005?_r=1&_t=ZS-9A6SDpJzsP6" target="_blank" class="w-full bg-black hover:bg-slate-950 text-white border border-slate-700 text-xs font-bold py-2.5 rounded-xl text-center shadow-md transition flex items-center justify-center gap-2 group-hover:border-cyan-400/50">
+                            <i class="fa-brands fa-tiktok text-sm text-cyan-400"></i> Follow di TikTok
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- FOOTER -->
     <footer id="kontak" class="bg-white border-t border-gray-100 pt-10 sm:pt-12 pb-8 px-4 sm:px-6">
         <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-8">
@@ -819,16 +958,18 @@
                 <ul class="space-y-2 text-xs text-gray-500 font-medium">
                     <li><a href="#tentang" class="hover:text-red-600 transition">Tentang Kami</a></li>
                     <li><a href="#visi-misi" class="hover:text-red-600 transition">Visi & Misi</a></li>
+                    <li><a href="#agenda" class="hover:text-red-600 transition">Agenda Kegiatan</a></li>
                     <li><a href="#teater" class="hover:text-red-600 transition">Teater Video</a></li>
                     <li><a href="#galeri" class="hover:text-red-600 transition">Galeri</a></li>
+                    <li><a href="#sosmed" class="hover:text-red-600 transition">Sosial Media</a></li>
                     <li><a href="#berita" class="hover:text-red-600 transition">Berita</a></li>
                     <li><a href="#pendaftaran" class="hover:text-red-600 transition">Pendaftaran</a></li>
                 </ul>
             </div>
 
             <div>
-                <h4 class="font-bold text-gray-900 text-xs uppercase tracking-wider mb-3">KONTAK</h4>
-                <ul class="space-y-2.5 text-xs text-gray-500">
+                <h4 class="font-bold text-gray-900 text-xs uppercase tracking-wider mb-3">KONTAK & LOKASI</h4>
+                <ul class="space-y-2.5 text-xs text-gray-500 mb-4">
                     <li class="flex items-start gap-2">
                         <i class="fa-solid fa-location-dot text-red-600 mt-0.5"></i>
                         <span>Lenteng Agung, Kecamatan Jagakarsa, Jakarta Selatan</span>
@@ -842,6 +983,9 @@
                         <span>unitkarangtarunarw005@gmail.com</span>
                     </li>
                 </ul>
+                <div class="w-full h-28 rounded-xl overflow-hidden border border-gray-200">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15861.127814467554!2d106.8287!3d-6.3312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ed284b1509a7%3A0x2a91a92e100e470!2sLenteng%20Agung%2C%20Jagakarsa%2C%20South%20Jakarta%20City%2C%20Jakarta!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid" class="w-full h-full border-0" allowfullscreen="" loading="lazy"></iframe>
+                </div>
             </div>
         </div>
 
@@ -850,25 +994,37 @@
         </div>
     </footer>
 
-    <!-- SCRIPT INTERAKTIF DASHBOARD, WHATSAPP DIRECT, & CINEMA DIMMER -->
+    <!-- SCRIPT INTERAKTIF -->
     <script>
-        let totalCount = 0;
         const form = document.getElementById('formPendaftaran');
         const tabel = document.getElementById('tabelPendaftar');
         const totalText = document.getElementById('totalPendaftar');
+        const ADMIN_PHONE = '6281318386364';
 
-        // Nomor WhatsApp Admin Pengurus
-        const ADMIN_PHONE = '62895342874610';
+        // 1. TOGGLE NAVIGASI MOBILE
+        const btnMobileMenu = document.getElementById('btnMobileMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+        btnMobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
 
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
+        // 2. PENYIMPANAN DATA PERSISTEN (LOCALSTORAGE)
+        document.addEventListener('DOMContentLoaded', () => {
+            loadPendaftar();
+            updatePlaylistCount();
+        });
 
-            const nama = document.getElementById('nama').value.trim();
-            const rtRw = document.getElementById('rtRw').value.trim();
-            let telepon = document.getElementById('telepon').value.trim();
-            const divisi = document.getElementById('divisi').value;
+        function loadPendaftar() {
+            const dataPendaftar = JSON.parse(localStorage.getItem('pendaftarRW005')) || [];
+            tabel.innerHTML = '';
+            totalText.textContent = dataPendaftar.length;
 
-            // 1. Tambahkan data langsung ke tabel Dashboard
+            dataPendaftar.forEach(item => {
+                renderRow(item.nama, item.rtRw, item.telepon, item.divisi);
+            });
+        }
+
+        function renderRow(nama, rtRw, telepon, divisi) {
             const tr = document.createElement('tr');
             tr.className = "hover:bg-red-50/50 transition border-b border-gray-100";
             tr.innerHTML = `
@@ -878,26 +1034,40 @@
                 <td class="p-2.5 sm:p-3"><span class="bg-gray-100 px-2 py-0.5 rounded text-[10px] font-medium">${divisi}</span></td>
                 <td class="p-2.5 sm:p-3"><span class="bg-emerald-100 text-emerald-700 font-bold px-2 py-0.5 rounded-full text-[10px]">Tersimpan</span></td>
             `;
-
             tabel.appendChild(tr);
-            totalCount++;
-            totalText.textContent = totalCount;
+        }
 
-            // 2. Format Pesan WhatsApp
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const nama = document.getElementById('nama').value.trim();
+            const rtRw = document.getElementById('rtRw').value.trim();
+            let telepon = document.getElementById('telepon').value.trim();
+            const divisi = document.getElementById('divisi').value;
+
+            const listLama = JSON.parse(localStorage.getItem('pendaftarRW005')) || [];
+            listLama.push({ nama, rtRw, telepon, divisi });
+            localStorage.setItem('pendaftarRW005', JSON.stringify(listLama));
+
+            renderRow(nama, rtRw, telepon, divisi);
+            totalText.textContent = listLama.length;
+
             const pesanPendaftaran = `Halo Admin Karang Taruna RW 005,%0A%0ASaya ingin mendaftar sebagai anggota baru:%0A- *Nama:* ${encodeURIComponent(nama)}%0A- *RT/RW:* ${encodeURIComponent(rtRw)}%0A- *No. WA:* ${encodeURIComponent(telepon)}%0A- *Divisi Minat:* ${encodeURIComponent(divisi)}%0A%0AMohon diproses pendaftaran saya. Terima kasih!`;
-
-            // 3. Buka WhatsApp secara otomatis
             const waUrl = `https://wa.me/${ADMIN_PHONE}?text=${pesanPendaftaran}`;
             window.open(waUrl, '_blank');
 
-            // 4. Reset Form
             form.reset();
             alert('Pendaftaran berhasil disimpan! WhatsApp akan terbuka untuk konfirmasi ke admin.');
         });
 
-        // Script Interaktif Toggle Lampu Bioskop (Cinema Light Dimmer)
+        // 3. CINEMA DIMMER & PLAYLIST TEATER INTERAKTIF
         const btnToggleLight = document.getElementById('toggleCinemaLight');
         const teaterSection = document.getElementById('teater');
+        const theaterVideo = document.getElementById('theaterVideo');
+        const videoSource = document.getElementById('videoSource');
+        const videoTitleDisplay = document.getElementById('videoTitleDisplay');
+        const playlistCards = document.querySelectorAll('.playlist-card');
+        const playlistCount = document.getElementById('playlistCount');
         let isDimmed = false;
 
         btnToggleLight.addEventListener('click', function() {
@@ -908,6 +1078,78 @@
             } else {
                 teaterSection.classList.remove('cinema-dimmed');
                 btnToggleLight.innerHTML = `<i class="fa-solid fa-lightbulb text-amber-400"></i> Mode Bioskop`;
+            }
+        });
+
+        function updatePlaylistCount() {
+            if(playlistCount) {
+                playlistCount.textContent = `${playlistCards.length} Video`;
+            }
+        }
+
+        // KONTROL PENUKARAN VIDEO DI PLAYLIST
+        playlistCards.forEach(card => {
+            card.addEventListener('click', function() {
+                // Reset style pada semua item playlist
+                playlistCards.forEach(c => {
+                    c.classList.remove('active-video', 'bg-amber-500/10', 'border-2', 'border-amber-500');
+                    c.classList.add('bg-neutral-800/60', 'border', 'border-neutral-700');
+                    
+                    const textTitle = c.querySelector('h4');
+                    if(textTitle) {
+                        textTitle.classList.remove('text-white');
+                        textTitle.classList.add('text-slate-200');
+                    }
+
+                    const badge = c.querySelector('.badge-status');
+                    if(badge) badge.classList.add('hidden');
+                });
+
+                // Aktifkan style pada item yang diklik
+                this.classList.remove('bg-neutral-800/60', 'border-neutral-700');
+                this.classList.add('active-video', 'bg-amber-500/10', 'border-2', 'border-amber-500');
+
+                const textTitle = this.querySelector('h4');
+                if(textTitle) {
+                    textTitle.classList.remove('text-slate-200');
+                    textTitle.classList.add('text-white');
+                }
+
+                const badge = this.querySelector('.badge-status');
+                if(badge) badge.classList.remove('hidden');
+
+                // Update sumber video dan judul
+                const src = this.getAttribute('data-src');
+                const poster = this.getAttribute('data-poster');
+                const title = this.getAttribute('data-title');
+
+                videoSource.src = src;
+                theaterVideo.poster = poster;
+                videoTitleDisplay.textContent = title;
+                theaterVideo.load();
+                theaterVideo.play();
+            });
+        });
+
+        // 4. LIGHTBOX GALERI FOTO
+        const lightboxModal = document.getElementById('lightboxModal');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const closeLightbox = document.getElementById('closeLightbox');
+
+        document.querySelectorAll('.gallery-item img').forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightboxModal.classList.remove('hidden');
+            });
+        });
+
+        closeLightbox.addEventListener('click', () => {
+            lightboxModal.classList.add('hidden');
+        });
+
+        lightboxModal.addEventListener('click', (e) => {
+            if (e.target === lightboxModal) {
+                lightboxModal.classList.add('hidden');
             }
         });
     </script>
